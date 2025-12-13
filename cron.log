@@ -1,0 +1,42 @@
+node:internal/bootstrap/switches/does_own_process_state:142
+    cachedCwd = rawMethods.cwd();
+                           ^
+
+Error: EINTR: interrupted system call, uv_cwd
+    at process.wrappedCwd [as cwd] (node:internal/bootstrap/switches/does_own_process_state:142:28)
+    at node:path:1153:24
+    at Object.resolve (node:path:1181:19)
+    at resolveMainPath (node:internal/modules/run_main:39:38)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:162:20)
+    at node:internal/main/run_main_module:36:49 {
+  errno: -4,
+  code: 'EINTR',
+  syscall: 'uv_cwd'
+}
+
+Node.js v22.12.0
+[dotenv@17.2.3] injecting env (7) from .env -- tip: 🔐 prevent committing .env to code: https://dotenvx.com/precommit
+📖 Reading articles from daily_input.json...
+🚀 Found 1 items. Starting processing...
+   ⚡ [1/1] Processing ID: 1...
+
+✅ DONE! Results saved to: /Users/vijay/Documents/nexjs dev/telugu-rewrite-server/results/output_2025-12-08.json
+[dotenv@17.2.3] injecting env (7) from .env -- tip: ⚙️  write to custom object with { processEnv: myObject }
+📖 Reading articles from daily_input.json...
+🚀 Found 1 items. Starting processing...
+   ⚡ [1/1] Processing ID: 1...
+      ❌ Failed: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: fetch failed
+
+✅ DONE! Results saved to: /Users/vijay/Documents/nexjs dev/telugu-rewrite-server/results/output_2025-12-11.json
+[dotenv@17.2.3] injecting env (7) from .env -- tip: ⚙️  override existing env vars with { override: true }
+📖 Reading articles from daily_input.json...
+🚀 Found 1 items. Starting processing...
+   ⚡ [1/1] Processing ID: 1...
+
+✅ DONE! Results saved to: /Users/vijay/Documents/nexjs dev/telugu-rewrite-server/results/output_2025-12-12.json
+[dotenv@17.2.3] injecting env (7) from .env -- tip: ⚙️  load multiple .env files with { path: ['.env.local', '.env'] }
+📖 Reading articles from daily_input.json...
+🚀 Found 1 items. Starting processing...
+   ⚡ [1/1] Processing ID: 1...
+
+✅ DONE! Results saved to: /Users/vijay/Documents/nexjs dev/telugu-rewrite-server/results/output_2025-12-13.json

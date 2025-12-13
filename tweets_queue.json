@@ -1,0 +1,4719 @@
+[
+  {
+    "type": "tweet",
+    "id": "1999488442464633059",
+    "url": "https://x.com/NewsMeter_In/status/1999488442464633059",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999488442464633059",
+    "text": "#Hyderabad:\n\n@samajwadiparty President &amp; MP @yadavakhilesh met @BRSparty\nworking president @KTRBRS and former minister @BRSHarish Rao at their Nandi Nagar residence today.\n\n“#KTR and @KCRBRSPresident are our friends, we will always stand with them,” Akhilesh Yadav said. https://t.co/vaZthIvSeC",
+    "source": "Twitter for iPhone",
+    "retweetCount": 2,
+    "replyCount": 0,
+    "likeCount": 18,
+    "quoteCount": 0,
+    "viewCount": 886,
+    "createdAt": "Fri Dec 12 14:36:08 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999488442464633059",
+    "displayTextRange": [
+      0,
+      274
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.x.com/vaZthIvSeC",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999488442464633059/video/1",
+          "id_str": "1999488234645327872",
+          "indices": [
+            275,
+            298
+          ],
+          "media_key": "7_1999488234645327872",
+          "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1999488234645327872/pu/img/xX6xUf2haakqn_pN.jpg",
+          "type": "video",
+          "url": "https://t.co/vaZthIvSeC",
+          "additional_media_info": {
+            "monetizable": false
+          },
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "sizes": {
+            "large": {
+              "h": 720,
+              "w": 1264,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 684,
+              "w": 1200,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 387,
+              "w": 680,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 720,
+            "width": 1264,
+            "focus_rects": []
+          },
+          "video_info": {
+            "aspect_ratio": [
+              79,
+              45
+            ],
+            "duration_millis": 22476,
+            "variants": [
+              {
+                "content_type": "application/x-mpegURL",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/pl/DcPbxudmIOZeR5Pt.m3u8"
+              },
+              {
+                "bitrate": 256000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/vid/avc1/474x270/TbMGFZb1Hf0cNlco.mp4"
+              },
+              {
+                "bitrate": 832000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/vid/avc1/632x360/tOgNT-slSUNmjmb1.mp4"
+              },
+              {
+                "bitrate": 2176000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/vid/avc1/1264x720/7bP7VexomcOkZjif.mp4"
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "7_1999488234645327872"
+            }
+          }
+        },
+        {
+          "display_url": "pic.x.com/vaZthIvSeC",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999488442464633059/video/1",
+          "id_str": "1999488284788162561",
+          "indices": [
+            275,
+            298
+          ],
+          "media_key": "7_1999488284788162561",
+          "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1999488284788162561/pu/img/nlrm-XW1RofeIhBS.jpg",
+          "type": "video",
+          "url": "https://t.co/vaZthIvSeC",
+          "additional_media_info": {
+            "monetizable": false
+          },
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "sizes": {
+            "large": {
+              "h": 476,
+              "w": 640,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 476,
+              "w": 640,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 476,
+              "w": 640,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 476,
+            "width": 640,
+            "focus_rects": []
+          },
+          "video_info": {
+            "aspect_ratio": [
+              160,
+              119
+            ],
+            "duration_millis": 12757,
+            "variants": [
+              {
+                "content_type": "application/x-mpegURL",
+                "url": "https://video.twimg.com/ext_tw_video/1999488284788162561/pu/pl/Kl6tRxulyb_TBg4J.m3u8"
+              },
+              {
+                "bitrate": 256000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488284788162561/pu/vid/avc1/362x270/IizgoW0LKO7HjBwF.mp4"
+              },
+              {
+                "bitrate": 832000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488284788162561/pu/vid/avc1/640x476/g4qyEbVpx7aMia0a.mp4"
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "7_1999488284788162561"
+            }
+          }
+        }
+      ]
+    },
+    "card": null,
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "text": "Hyderabad"
+        },
+        {
+          "indices": [
+            178,
+            182
+          ],
+          "text": "KTR"
+        }
+      ],
+      "media": [
+        {
+          "display_url": "pic.x.com/vaZthIvSeC",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999488442464633059/video/1",
+          "id_str": "1999488234645327872",
+          "indices": [
+            275,
+            298
+          ],
+          "media_key": "7_1999488234645327872",
+          "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1999488234645327872/pu/img/xX6xUf2haakqn_pN.jpg",
+          "type": "video",
+          "url": "https://t.co/vaZthIvSeC",
+          "additional_media_info": {
+            "monetizable": false
+          },
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "sizes": {
+            "large": {
+              "h": 720,
+              "w": 1264,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 684,
+              "w": 1200,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 387,
+              "w": 680,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 720,
+            "width": 1264,
+            "focus_rects": []
+          },
+          "video_info": {
+            "aspect_ratio": [
+              79,
+              45
+            ],
+            "duration_millis": 22476,
+            "variants": [
+              {
+                "content_type": "application/x-mpegURL",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/pl/DcPbxudmIOZeR5Pt.m3u8"
+              },
+              {
+                "bitrate": 256000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/vid/avc1/474x270/TbMGFZb1Hf0cNlco.mp4"
+              },
+              {
+                "bitrate": 832000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/vid/avc1/632x360/tOgNT-slSUNmjmb1.mp4"
+              },
+              {
+                "bitrate": 2176000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488234645327872/pu/vid/avc1/1264x720/7bP7VexomcOkZjif.mp4"
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "7_1999488234645327872"
+            }
+          }
+        },
+        {
+          "display_url": "pic.x.com/vaZthIvSeC",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999488442464633059/video/1",
+          "id_str": "1999488284788162561",
+          "indices": [
+            275,
+            298
+          ],
+          "media_key": "7_1999488284788162561",
+          "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1999488284788162561/pu/img/nlrm-XW1RofeIhBS.jpg",
+          "type": "video",
+          "url": "https://t.co/vaZthIvSeC",
+          "additional_media_info": {
+            "monetizable": false
+          },
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "sizes": {
+            "large": {
+              "h": 476,
+              "w": 640,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 476,
+              "w": 640,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 476,
+              "w": 640,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 476,
+            "width": 640,
+            "focus_rects": []
+          },
+          "video_info": {
+            "aspect_ratio": [
+              160,
+              119
+            ],
+            "duration_millis": 12757,
+            "variants": [
+              {
+                "content_type": "application/x-mpegURL",
+                "url": "https://video.twimg.com/ext_tw_video/1999488284788162561/pu/pl/Kl6tRxulyb_TBg4J.m3u8"
+              },
+              {
+                "bitrate": 256000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488284788162561/pu/vid/avc1/362x270/IizgoW0LKO7HjBwF.mp4"
+              },
+              {
+                "bitrate": 832000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999488284788162561/pu/vid/avc1/640x476/g4qyEbVpx7aMia0a.mp4"
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "7_1999488284788162561"
+            }
+          }
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "143392465",
+          "name": "Samajwadi Party",
+          "screen_name": "samajwadiparty",
+          "indices": [
+            13,
+            28
+          ]
+        },
+        {
+          "id_str": "57948579",
+          "name": "Akhilesh Yadav",
+          "screen_name": "yadavakhilesh",
+          "indices": [
+            48,
+            62
+          ]
+        },
+        {
+          "id_str": "2375182790",
+          "name": "BRS Party",
+          "screen_name": "BRSparty",
+          "indices": [
+            67,
+            76
+          ]
+        },
+        {
+          "id_str": "118787224",
+          "name": "KTR",
+          "screen_name": "KTRBRS",
+          "indices": [
+            95,
+            102
+          ]
+        },
+        {
+          "id_str": "192942692",
+          "name": "Harish Rao Thanneeru",
+          "screen_name": "BRSHarish",
+          "indices": [
+            123,
+            133
+          ]
+        },
+        {
+          "id_str": "1784102348131893248",
+          "name": "KCR",
+          "screen_name": "KCRBRSPresident",
+          "indices": [
+            187,
+            203
+          ]
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999485582784033145",
+    "url": "https://x.com/NewsMeter_In/status/1999485582784033145",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999485582784033145",
+    "text": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO #Akhanda2premiereshows #TelanganaHighCourt #Contemptnotice #CVAnand #BookMyShowCEO https://t.co/UoGb7lHKMy",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 401,
+    "createdAt": "Fri Dec 12 14:24:46 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999485582784033145",
+    "displayTextRange": [
+      0,
+      197
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {},
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 150,
+              "width": 267,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=280x150"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "During the hearing, the bench noted that premiere shows of Akhanda 2 were held even after it had issued an interim suspension of all permissions related to such screenings",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 320,
+              "width": 569,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=800x320_1"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 843,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 81,
+              "width": 144,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=144x144"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 843,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 843,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_alt_text",
+          "value": {
+            "string_value": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_alt_text",
+          "value": {
+            "string_value": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 232,
+                    "green": 226,
+                    "red": 220
+                  },
+                  "percentage": 25.11
+                },
+                {
+                  "rgb": {
+                    "blue": 116,
+                    "green": 121,
+                    "red": 130
+                  },
+                  "percentage": 22.94
+                },
+                {
+                  "rgb": {
+                    "blue": 67,
+                    "green": 74,
+                    "red": 77
+                  },
+                  "percentage": 18.47
+                },
+                {
+                  "rgb": {
+                    "blue": 212,
+                    "green": 165,
+                    "red": 148
+                  },
+                  "percentage": 14.47
+                },
+                {
+                  "rgb": {
+                    "blue": 98,
+                    "green": 36,
+                    "red": 13
+                  },
+                  "percentage": 5.06
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 232,
+                    "green": 226,
+                    "red": 220
+                  },
+                  "percentage": 25.11
+                },
+                {
+                  "rgb": {
+                    "blue": 116,
+                    "green": 121,
+                    "red": 130
+                  },
+                  "percentage": 22.94
+                },
+                {
+                  "rgb": {
+                    "blue": 67,
+                    "green": 74,
+                    "red": 77
+                  },
+                  "percentage": 18.47
+                },
+                {
+                  "rgb": {
+                    "blue": 212,
+                    "green": 165,
+                    "red": 148
+                  },
+                  "percentage": 14.47
+                },
+                {
+                  "rgb": {
+                    "blue": 98,
+                    "green": 36,
+                    "red": 13
+                  },
+                  "percentage": 5.06
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 843,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 232,
+                    "green": 226,
+                    "red": 220
+                  },
+                  "percentage": 25.11
+                },
+                {
+                  "rgb": {
+                    "blue": 116,
+                    "green": 121,
+                    "red": 130
+                  },
+                  "percentage": 22.94
+                },
+                {
+                  "rgb": {
+                    "blue": 67,
+                    "green": 74,
+                    "red": 77
+                  },
+                  "percentage": 18.47
+                },
+                {
+                  "rgb": {
+                    "blue": 212,
+                    "green": 165,
+                    "red": 148
+                  },
+                  "percentage": 14.47
+                },
+                {
+                  "rgb": {
+                    "blue": 98,
+                    "green": 36,
+                    "red": 13
+                  },
+                  "percentage": 5.06
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 843,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/UoGb7lHKMy",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Akhanda 2 premiere shows: Telangana HC issues contempt notices to CV Anand, BookMyShow CEO",
+              "height": 843,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999485595459158024/xFF8JhBt?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "Android",
+            "version": "12"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/UoGb7lHKMy",
+      "user_refs_results": []
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            91,
+            113
+          ],
+          "text": "Akhanda2premiereshows"
+        },
+        {
+          "indices": [
+            114,
+            133
+          ],
+          "text": "TelanganaHighCourt"
+        },
+        {
+          "indices": [
+            134,
+            149
+          ],
+          "text": "Contemptnotice"
+        },
+        {
+          "indices": [
+            150,
+            158
+          ],
+          "text": "CVAnand"
+        },
+        {
+          "indices": [
+            159,
+            173
+          ],
+          "text": "BookMyShowCEO"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "newsmeter.in/top-stories/ak…",
+          "expanded_url": "https://newsmeter.in/top-stories/akhanda-2-premiere-shows-telangana-hc-issues-contempt-notices-to-cv-anand-bookmyshow-ceo-759672",
+          "url": "https://t.co/UoGb7lHKMy",
+          "indices": [
+            174,
+            197
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999789058957127963",
+    "url": "https://x.com/NewsMeter_In/status/1999789058957127963",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999789058957127963",
+    "text": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next #Messi’sGOATIndiatour #ChaosinKolkata #Hyderabad https://t.co/srSgADULAw",
+    "source": "Twitter for iPhone",
+    "retweetCount": 1,
+    "replyCount": 0,
+    "likeCount": 4,
+    "quoteCount": 0,
+    "viewCount": 471,
+    "createdAt": "Sat Dec 13 10:30:40 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999789058957127963",
+    "displayTextRange": [
+      0,
+      148
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {},
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 150,
+              "width": 225,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=280x150"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "Angry over alleged poor organisation, fans resorted to vandalism, hurled bottles from the stands and broke barricades after Messi left the venue barely 20 minutes",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 320,
+              "width": 480,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=800x320_1"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 694,
+              "width": 1040,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 67,
+              "width": 100,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=100x100"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 694,
+              "width": 1040,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 694,
+              "width": 1040,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_alt_text",
+          "value": {
+            "string_value": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_alt_text",
+          "value": {
+            "string_value": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 67,
+                    "green": 64,
+                    "red": 59
+                  },
+                  "percentage": 56.76
+                },
+                {
+                  "rgb": {
+                    "blue": 105,
+                    "green": 151,
+                    "red": 134
+                  },
+                  "percentage": 18.5
+                },
+                {
+                  "rgb": {
+                    "blue": 188,
+                    "green": 181,
+                    "red": 180
+                  },
+                  "percentage": 7.07
+                },
+                {
+                  "rgb": {
+                    "blue": 53,
+                    "green": 78,
+                    "red": 62
+                  },
+                  "percentage": 2.26
+                },
+                {
+                  "rgb": {
+                    "blue": 86,
+                    "green": 160,
+                    "red": 134
+                  },
+                  "percentage": 2.12
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 67,
+                    "green": 64,
+                    "red": 59
+                  },
+                  "percentage": 56.76
+                },
+                {
+                  "rgb": {
+                    "blue": 105,
+                    "green": 151,
+                    "red": 134
+                  },
+                  "percentage": 18.5
+                },
+                {
+                  "rgb": {
+                    "blue": 188,
+                    "green": 181,
+                    "red": 180
+                  },
+                  "percentage": 7.07
+                },
+                {
+                  "rgb": {
+                    "blue": 53,
+                    "green": 78,
+                    "red": 62
+                  },
+                  "percentage": 2.26
+                },
+                {
+                  "rgb": {
+                    "blue": 86,
+                    "green": 160,
+                    "red": 134
+                  },
+                  "percentage": 2.12
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 694,
+              "width": 1040,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 67,
+                    "green": 64,
+                    "red": 59
+                  },
+                  "percentage": 56.76
+                },
+                {
+                  "rgb": {
+                    "blue": 105,
+                    "green": 151,
+                    "red": 134
+                  },
+                  "percentage": 18.5
+                },
+                {
+                  "rgb": {
+                    "blue": 188,
+                    "green": 181,
+                    "red": 180
+                  },
+                  "percentage": 7.07
+                },
+                {
+                  "rgb": {
+                    "blue": 53,
+                    "green": 78,
+                    "red": 62
+                  },
+                  "percentage": 2.26
+                },
+                {
+                  "rgb": {
+                    "blue": 86,
+                    "green": 160,
+                    "red": 134
+                  },
+                  "percentage": 2.12
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 694,
+              "width": 1040,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/srSgADULAw",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Messi’s GOAT India tour hit by chaos in Kolkata, all eyes on Hyderabad next",
+              "height": 694,
+              "width": 1040,
+              "url": "https://pbs.twimg.com/card_img/1999789063960981504/BhxNbB1L?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "Android",
+            "version": "12"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/srSgADULAw",
+      "user_refs_results": []
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            76,
+            82
+          ],
+          "text": "Messi"
+        },
+        {
+          "indices": [
+            98,
+            113
+          ],
+          "text": "ChaosinKolkata"
+        },
+        {
+          "indices": [
+            114,
+            124
+          ],
+          "text": "Hyderabad"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "newsmeter.in/top-stories/me…",
+          "expanded_url": "https://newsmeter.in/top-stories/messis-goat-india-tour-hit-by-chaos-in-kolkata-all-eyes-on-hyderabad-next-759705",
+          "url": "https://t.co/srSgADULAw",
+          "indices": [
+            125,
+            148
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999692729962627219",
+    "url": "https://x.com/NewsMeter_In/status/1999692729962627219",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999692729962627219",
+    "text": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process https://t.co/nxgQockHPo",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 4,
+    "quoteCount": 0,
+    "viewCount": 503,
+    "createdAt": "Sat Dec 13 04:07:53 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999692729962627219",
+    "displayTextRange": [
+      0,
+      111
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {},
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 144,
+              "width": 240,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=240x240"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "Justice NV Shravan Kumar, hearing the petitions, directed the government not to proceed with taking possession of the petitioners’ lands until the court delivers its final verdict.",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 320,
+              "width": 533,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=800x320_1"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 60,
+              "width": 100,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=100x100"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_alt_text",
+          "value": {
+            "string_value": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_alt_text",
+          "value": {
+            "string_value": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 213,
+                    "green": 151,
+                    "red": 52
+                  },
+                  "percentage": 24.23
+                },
+                {
+                  "rgb": {
+                    "blue": 57,
+                    "green": 54,
+                    "red": 57
+                  },
+                  "percentage": 21.43
+                },
+                {
+                  "rgb": {
+                    "blue": 113,
+                    "green": 145,
+                    "red": 175
+                  },
+                  "percentage": 16.84
+                },
+                {
+                  "rgb": {
+                    "blue": 38,
+                    "green": 72,
+                    "red": 70
+                  },
+                  "percentage": 8.81
+                },
+                {
+                  "rgb": {
+                    "blue": 212,
+                    "green": 191,
+                    "red": 165
+                  },
+                  "percentage": 8.72
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 213,
+                    "green": 151,
+                    "red": 52
+                  },
+                  "percentage": 24.23
+                },
+                {
+                  "rgb": {
+                    "blue": 57,
+                    "green": 54,
+                    "red": 57
+                  },
+                  "percentage": 21.43
+                },
+                {
+                  "rgb": {
+                    "blue": 113,
+                    "green": 145,
+                    "red": 175
+                  },
+                  "percentage": 16.84
+                },
+                {
+                  "rgb": {
+                    "blue": 38,
+                    "green": 72,
+                    "red": 70
+                  },
+                  "percentage": 8.81
+                },
+                {
+                  "rgb": {
+                    "blue": 212,
+                    "green": 191,
+                    "red": 165
+                  },
+                  "percentage": 8.72
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 213,
+                    "green": 151,
+                    "red": 52
+                  },
+                  "percentage": 24.23
+                },
+                {
+                  "rgb": {
+                    "blue": 57,
+                    "green": 54,
+                    "red": 57
+                  },
+                  "percentage": 21.43
+                },
+                {
+                  "rgb": {
+                    "blue": 113,
+                    "green": 145,
+                    "red": 175
+                  },
+                  "percentage": 16.84
+                },
+                {
+                  "rgb": {
+                    "blue": 38,
+                    "green": 72,
+                    "red": 70
+                  },
+                  "percentage": 8.81
+                },
+                {
+                  "rgb": {
+                    "blue": 212,
+                    "green": 191,
+                    "red": 165
+                  },
+                  "percentage": 8.72
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/nxgQockHPo",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Greenfield Radial Road case: Telangana HC orders status quo on land acquisition process",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999692654511312897/JJ7ebF1z?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "Android",
+            "version": "12"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/nxgQockHPo",
+      "user_refs_results": []
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "newsmeter.in/regional/telan…",
+          "expanded_url": "https://newsmeter.in/regional/telangana/greenfield-radial-road-case-telangana-hc-orders-status-quo-on-land-acquisition-process-759691?utm_source=mobile-social-share&utm_partner=newsmeter&utm_campaign=share&utm_medium=twitter",
+          "url": "https://t.co/nxgQockHPo",
+          "indices": [
+            88,
+            111
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999682030230208541",
+    "url": "https://x.com/NewsMeter_In/status/1999682030230208541",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999682030230208541",
+    "text": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs #VisakhapatnamEconomicRegion #NaraChandrababuNaidu #GlobalEconomicHub https://t.co/bUQR4JaVmo",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 340,
+    "createdAt": "Sat Dec 13 03:25:22 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 1,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999682030230208541",
+    "displayTextRange": [
+      0,
+      174
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {},
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 144,
+              "width": 240,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=240x240"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "The Chief Minister directed officials to transform Visakhapatnam into a slum-free city. He reiterated that the entire state would be developed through three economic regions—Visakhapatnam, Amaravat...",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 320,
+              "width": 533,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=800x320_1"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 60,
+              "width": 100,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=100x100"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_alt_text",
+          "value": {
+            "string_value": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_alt_text",
+          "value": {
+            "string_value": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 183,
+                    "green": 207,
+                    "red": 221
+                  },
+                  "percentage": 29.9
+                },
+                {
+                  "rgb": {
+                    "blue": 185,
+                    "green": 130,
+                    "red": 99
+                  },
+                  "percentage": 29.4
+                },
+                {
+                  "rgb": {
+                    "blue": 63,
+                    "green": 120,
+                    "red": 162
+                  },
+                  "percentage": 13.22
+                },
+                {
+                  "rgb": {
+                    "blue": 20,
+                    "green": 62,
+                    "red": 105
+                  },
+                  "percentage": 4.46
+                },
+                {
+                  "rgb": {
+                    "blue": 79,
+                    "green": 67,
+                    "red": 65
+                  },
+                  "percentage": 3.8
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 183,
+                    "green": 207,
+                    "red": 221
+                  },
+                  "percentage": 29.9
+                },
+                {
+                  "rgb": {
+                    "blue": 185,
+                    "green": 130,
+                    "red": 99
+                  },
+                  "percentage": 29.4
+                },
+                {
+                  "rgb": {
+                    "blue": 63,
+                    "green": 120,
+                    "red": 162
+                  },
+                  "percentage": 13.22
+                },
+                {
+                  "rgb": {
+                    "blue": 20,
+                    "green": 62,
+                    "red": 105
+                  },
+                  "percentage": 4.46
+                },
+                {
+                  "rgb": {
+                    "blue": 79,
+                    "green": 67,
+                    "red": 65
+                  },
+                  "percentage": 3.8
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 183,
+                    "green": 207,
+                    "red": 221
+                  },
+                  "percentage": 29.9
+                },
+                {
+                  "rgb": {
+                    "blue": 185,
+                    "green": 130,
+                    "red": 99
+                  },
+                  "percentage": 29.4
+                },
+                {
+                  "rgb": {
+                    "blue": 63,
+                    "green": 120,
+                    "red": 162
+                  },
+                  "percentage": 13.22
+                },
+                {
+                  "rgb": {
+                    "blue": 20,
+                    "green": 62,
+                    "red": 105
+                  },
+                  "percentage": 4.46
+                },
+                {
+                  "rgb": {
+                    "blue": 79,
+                    "green": 67,
+                    "red": 65
+                  },
+                  "percentage": 3.8
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/bUQR4JaVmo",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "alt": "CM Naidu eyes USD 125–135B GDP for Visakhapatnam Economic Region, 3 million jobs",
+              "height": 900,
+              "width": 1500,
+              "url": "https://pbs.twimg.com/card_img/1999682035464699906/FuMcfLwU?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "Android",
+            "version": "12"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/bUQR4JaVmo",
+      "user_refs_results": []
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            81,
+            109
+          ],
+          "text": "VisakhapatnamEconomicRegion"
+        },
+        {
+          "indices": [
+            110,
+            131
+          ],
+          "text": "NaraChandrababuNaidu"
+        },
+        {
+          "indices": [
+            132,
+            150
+          ],
+          "text": "GlobalEconomicHub"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "newsmeter.in/education/cm-n…",
+          "expanded_url": "https://newsmeter.in/education/cm-naidu-eyes-usd-125135b-gdp-for-visakhapatnam-economic-region-3-million-jobs-759688",
+          "url": "https://t.co/bUQR4JaVmo",
+          "indices": [
+            151,
+            174
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999680096630898888",
+    "url": "https://x.com/NewsMeter_In/status/1999680096630898888",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999680096630898888",
+    "text": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP  Sajjanar to transgenders #CPVCSajjanar #transgenders https://t.co/M4R15Fit5m",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 0,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 299,
+    "createdAt": "Sat Dec 13 03:17:41 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999680096630898888",
+    "displayTextRange": [
+      0,
+      156
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {},
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 356,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 150,
+              "width": 276,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=280x150"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "City Police Commissioner VC Sajjanar has warned transgender community against forced collections and public harassment.",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 320,
+              "width": 588,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=800x320_1"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 370,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 356,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 78,
+              "width": 144,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=144x144"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 370,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 370,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_alt_text",
+          "value": {
+            "string_value": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_alt_text",
+          "value": {
+            "string_value": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 162,
+                    "green": 197,
+                    "red": 223
+                  },
+                  "percentage": 85.96
+                },
+                {
+                  "rgb": {
+                    "blue": 69,
+                    "green": 94,
+                    "red": 132
+                  },
+                  "percentage": 8.29
+                },
+                {
+                  "rgb": {
+                    "blue": 58,
+                    "green": 55,
+                    "red": 55
+                  },
+                  "percentage": 2.78
+                },
+                {
+                  "rgb": {
+                    "blue": 113,
+                    "green": 149,
+                    "red": 204
+                  },
+                  "percentage": 0.45
+                },
+                {
+                  "rgb": {
+                    "blue": 29,
+                    "green": 43,
+                    "red": 62
+                  },
+                  "percentage": 0.27
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transg...",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 162,
+                    "green": 197,
+                    "red": 223
+                  },
+                  "percentage": 85.96
+                },
+                {
+                  "rgb": {
+                    "blue": 69,
+                    "green": 94,
+                    "red": 132
+                  },
+                  "percentage": 8.29
+                },
+                {
+                  "rgb": {
+                    "blue": 58,
+                    "green": 55,
+                    "red": 55
+                  },
+                  "percentage": 2.78
+                },
+                {
+                  "rgb": {
+                    "blue": 113,
+                    "green": 149,
+                    "red": 204
+                  },
+                  "percentage": 0.45
+                },
+                {
+                  "rgb": {
+                    "blue": 29,
+                    "green": 43,
+                    "red": 62
+                  },
+                  "percentage": 0.27
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 370,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 162,
+                    "green": 197,
+                    "red": 223
+                  },
+                  "percentage": 85.96
+                },
+                {
+                  "rgb": {
+                    "blue": 69,
+                    "green": 94,
+                    "red": 132
+                  },
+                  "percentage": 8.29
+                },
+                {
+                  "rgb": {
+                    "blue": 58,
+                    "green": 55,
+                    "red": 55
+                  },
+                  "percentage": 2.78
+                },
+                {
+                  "rgb": {
+                    "blue": 113,
+                    "green": 149,
+                    "red": 204
+                  },
+                  "percentage": 0.45
+                },
+                {
+                  "rgb": {
+                    "blue": 29,
+                    "green": 43,
+                    "red": 62
+                  },
+                  "percentage": 0.27
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 370,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/M4R15Fit5m",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Forced collection, harassing people will be dealt with seriously: Hyderabad CP Sajjanar to transgenders",
+              "height": 370,
+              "width": 680,
+              "url": "https://pbs.twimg.com/card_img/1999680100892311553/vPHdcu_4?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "Android",
+            "version": "12"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/M4R15Fit5m",
+      "user_refs_results": []
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            105,
+            118
+          ],
+          "text": "CPVCSajjanar"
+        },
+        {
+          "indices": [
+            119,
+            132
+          ],
+          "text": "transgenders"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "newsmeter.in/hyderabad/forc…",
+          "expanded_url": "https://newsmeter.in/hyderabad/forced-collection-harassing-people-will-be-dealt-with-seriously-hyderabad-cp-sajjanar-to-transgenders-759687",
+          "url": "https://t.co/M4R15Fit5m",
+          "indices": [
+            133,
+            156
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999668846962311237",
+    "url": "https://x.com/NewsMeter_In/status/1999668846962311237",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999668846962311237",
+    "text": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar #Drugoffenders #Rowdy-sheeters #HyderabadPolice #CPVCSajjanar https://t.co/3ku31SFE36",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 1,
+    "likeCount": 0,
+    "quoteCount": 0,
+    "viewCount": 409,
+    "createdAt": "Sat Dec 13 02:32:59 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 0,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999668846962311237",
+    "displayTextRange": [
+      0,
+      186
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {},
+    "card": {
+      "binding_values": [
+        {
+          "key": "photo_image_full_size_large",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 150,
+              "width": 225,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=280x150"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "description",
+          "value": {
+            "string_value": "The meeting deliberated at length on the involvement of foreign nationals in drug trafficking and consumption",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "domain",
+          "value": {
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 320,
+              "width": 480,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=800x320_1"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 853,
+              "width": 1280,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_small",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 202,
+              "width": 386,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=386x202"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_large",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 419,
+              "width": 800,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=800x419"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_small",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 67,
+              "width": 100,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=100x100"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "thumbnail_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 853,
+              "width": 1280,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_original",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 853,
+              "width": 1280,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_alt_text",
+          "value": {
+            "string_value": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "vanity_url",
+          "value": {
+            "scribe_key": "vanity_url",
+            "string_value": "newsmeter.in",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "photo_image_full_size",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image_alt_text",
+          "value": {
+            "string_value": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "thumbnail_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 248,
+                    "green": 240,
+                    "red": 224
+                  },
+                  "percentage": 57.88
+                },
+                {
+                  "rgb": {
+                    "blue": 70,
+                    "green": 65,
+                    "red": 57
+                  },
+                  "percentage": 9.87
+                },
+                {
+                  "rgb": {
+                    "blue": 47,
+                    "green": 82,
+                    "red": 124
+                  },
+                  "percentage": 9.3
+                },
+                {
+                  "rgb": {
+                    "blue": 150,
+                    "green": 168,
+                    "red": 179
+                  },
+                  "percentage": 5.49
+                },
+                {
+                  "rgb": {
+                    "blue": 66,
+                    "green": 150,
+                    "red": 254
+                  },
+                  "percentage": 1.74
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "title",
+          "value": {
+            "string_value": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 248,
+                    "green": 240,
+                    "red": 224
+                  },
+                  "percentage": 57.88
+                },
+                {
+                  "rgb": {
+                    "blue": 70,
+                    "green": 65,
+                    "red": 57
+                  },
+                  "percentage": 9.87
+                },
+                {
+                  "rgb": {
+                    "blue": 47,
+                    "green": 82,
+                    "red": 124
+                  },
+                  "percentage": 9.3
+                },
+                {
+                  "rgb": {
+                    "blue": 150,
+                    "green": 168,
+                    "red": 179
+                  },
+                  "percentage": 5.49
+                },
+                {
+                  "rgb": {
+                    "blue": 66,
+                    "green": 150,
+                    "red": 254
+                  },
+                  "percentage": 1.74
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "summary_photo_image_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 853,
+              "width": 1280,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "summary_photo_image",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 314,
+              "width": 600,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=600x314"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "photo_image_full_size_color",
+          "value": {
+            "image_color_value": {
+              "palette": [
+                {
+                  "rgb": {
+                    "blue": 248,
+                    "green": 240,
+                    "red": 224
+                  },
+                  "percentage": 57.88
+                },
+                {
+                  "rgb": {
+                    "blue": 70,
+                    "green": 65,
+                    "red": 57
+                  },
+                  "percentage": 9.87
+                },
+                {
+                  "rgb": {
+                    "blue": 47,
+                    "green": 82,
+                    "red": 124
+                  },
+                  "percentage": 9.3
+                },
+                {
+                  "rgb": {
+                    "blue": 150,
+                    "green": 168,
+                    "red": 179
+                  },
+                  "percentage": 5.49
+                },
+                {
+                  "rgb": {
+                    "blue": 66,
+                    "green": 150,
+                    "red": 254
+                  },
+                  "percentage": 1.74
+                }
+              ]
+            },
+            "type": "IMAGE_COLOR"
+          }
+        },
+        {
+          "key": "photo_image_full_size_x_large",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 853,
+              "width": 1280,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=png&name=2048x2048_2_exp"
+            },
+            "type": "IMAGE"
+          }
+        },
+        {
+          "key": "card_url",
+          "value": {
+            "scribe_key": "card_url",
+            "string_value": "https://t.co/3ku31SFE36",
+            "type": "STRING"
+          }
+        },
+        {
+          "key": "summary_photo_image_original",
+          "value": {
+            "image_value": {
+              "alt": "Drug offenders to be tracked like rowdy-sheeters; scrutiny on foreigners, courier services: Sajjanar",
+              "height": 853,
+              "width": 1280,
+              "url": "https://pbs.twimg.com/card_img/1999668851148218370/d7L3i1JE?format=jpg&name=orig"
+            },
+            "type": "IMAGE"
+          }
+        }
+      ],
+      "card_platform": {
+        "platform": {
+          "audience": {
+            "name": "production"
+          },
+          "device": {
+            "name": "Android",
+            "version": "12"
+          }
+        }
+      },
+      "name": "summary_large_image",
+      "url": "https://t.co/3ku31SFE36",
+      "user_refs_results": []
+    },
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            101,
+            115
+          ],
+          "text": "Drugoffenders"
+        },
+        {
+          "indices": [
+            116,
+            122
+          ],
+          "text": "Rowdy"
+        },
+        {
+          "indices": [
+            132,
+            148
+          ],
+          "text": "HyderabadPolice"
+        },
+        {
+          "indices": [
+            149,
+            162
+          ],
+          "text": "CPVCSajjanar"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [
+        {
+          "display_url": "newsmeter.in/hyderabad/drug…",
+          "expanded_url": "https://newsmeter.in/hyderabad/drug-offenders-to-be-tracked-like-rowdy-sheeters-scrutiny-on-foreigners-courier-services-sajjanar-759673",
+          "url": "https://t.co/3ku31SFE36",
+          "indices": [
+            163,
+            186
+          ]
+        }
+      ],
+      "user_mentions": []
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999511376503656558",
+    "url": "https://x.com/NewsMeter_In/status/1999511376503656558",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999511376503656558",
+    "text": "#Hyderabad:\n\n@CPHydCity @SajjanarVC warns against forced collections by #transgender groups\n\nAt an interaction with 250 transgender persons today, the CP urged the community to avoid illegal activities and use govt #welfareschemes to live with dignity.\n\nADGP Charu Sinha explained the role of ‘Pride Place’, a special wing to address their grievances.\n\nOfficials noted that #Telangana has nearly 50,000 trans persons, and urged them to obtain govt ID cards to access #schemes & #reservations.\n\nEfforts are underway to create more #corporatejob opportunities for the community.\n\n@hydcitypolice",
+    "source": "Twitter for iPhone",
+    "retweetCount": 0,
+    "replyCount": 1,
+    "likeCount": 4,
+    "quoteCount": 0,
+    "viewCount": 654,
+    "createdAt": "Fri Dec 12 16:07:15 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 1,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999511376503656558",
+    "displayTextRange": [
+      0,
+      281
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.x.com/3UQUYAHuox",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999511376503656558/video/1",
+          "id_str": "1999510650809356288",
+          "indices": [
+            282,
+            305
+          ],
+          "media_key": "7_1999510650809356288",
+          "media_url_https": "https://pbs.twimg.com/ext_tw_video_thumb/1999510650809356288/pu/img/Tfx-3OLC29MDVtZe.jpg",
+          "type": "video",
+          "url": "https://t.co/3UQUYAHuox",
+          "additional_media_info": {
+            "monetizable": false
+          },
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "sizes": {
+            "large": {
+              "h": 720,
+              "w": 1280,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 675,
+              "w": 1200,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 383,
+              "w": 680,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 720,
+            "width": 1280,
+            "focus_rects": []
+          },
+          "video_info": {
+            "aspect_ratio": [
+              16,
+              9
+            ],
+            "duration_millis": 161365,
+            "variants": [
+              {
+                "content_type": "application/x-mpegURL",
+                "url": "https://video.twimg.com/ext_tw_video/1999510650809356288/pu/pl/WRNk1TVudRcGKGR7.m3u8"
+              },
+              {
+                "bitrate": 256000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999510650809356288/pu/vid/avc1/480x270/RNCa8eRk3eNYr__f.mp4"
+              },
+              {
+                "bitrate": 832000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999510650809356288/pu/vid/avc1/640x360/zTI_j63etPtEvbVq.mp4"
+              },
+              {
+                "bitrate": 2176000,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/ext_tw_video/1999510650809356288/pu/vid/avc1/1280x720/jGtpZhdlrJrOFJbf.mp4"
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "7_1999510650809356288"
+            }
+          }
+        }
+      ]
+    },
+    "card": null,
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "text": "Hyderabad"
+        },
+        {
+          "indices": [
+            72,
+            84
+          ],
+          "text": "transgender"
+        },
+        {
+          "indices": [
+            215,
+            230
+          ],
+          "text": "welfareschemes"
+        },
+        {
+          "indices": [
+            374,
+            384
+          ],
+          "text": "Telangana"
+        },
+        {
+          "indices": [
+            467,
+            475
+          ],
+          "text": "schemes"
+        },
+        {
+          "indices": [
+            478,
+            491
+          ],
+          "text": "reservations"
+        },
+        {
+          "indices": [
+            530,
+            543
+          ],
+          "text": "corporatejob"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "3235683981",
+          "name": "CP Hyderabad City Police",
+          "screen_name": "CPHydCity",
+          "indices": [
+            13,
+            23
+          ]
+        },
+        {
+          "id_str": "1433683268935700482",
+          "name": "V.C. Sajjanar, IPS",
+          "screen_name": "SajjanarVC",
+          "indices": [
+            24,
+            35
+          ]
+        },
+        {
+          "id_str": "2842306788",
+          "name": "Hyderabad City Police",
+          "screen_name": "hydcitypolice",
+          "indices": [
+            578,
+            592
+          ]
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999503918846374375",
+    "url": "https://x.com/NewsMeter_In/status/1999503918846374375",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999503918846374375",
+    "text": "#Hyderabad: Leader of Opposition @RahulGandhi will be in #Hyderabad tomorrow. \n\nCongress MP @RahulGandhi will attend the friendly football match between Chief Minister @revanth_anumula and Lionel Messi at the  Rajiv Gandhi International Cricket Stadium, Hyderabad. https://t.co/0rmSjUUhUS",
+    "source": "Twitter for iPhone",
+    "retweetCount": 1,
+    "replyCount": 0,
+    "likeCount": 8,
+    "quoteCount": 0,
+    "viewCount": 1080,
+    "createdAt": "Fri Dec 12 15:37:37 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 1,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999503918846374375",
+    "displayTextRange": [
+      0,
+      264
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.x.com/0rmSjUUhUS",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999503918846374375/photo/1",
+          "id_str": "1999503910160265216",
+          "indices": [
+            265,
+            288
+          ],
+          "media_key": "3_1999503910160265216",
+          "media_url_https": "https://pbs.twimg.com/media/G7-qNmQbcAA1CRV.jpg",
+          "type": "photo",
+          "url": "https://t.co/0rmSjUUhUS",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "x": 441,
+                  "y": 228,
+                  "h": 141,
+                  "w": 141
+                },
+                {
+                  "x": 771,
+                  "y": 142,
+                  "h": 177,
+                  "w": 177
+                },
+                {
+                  "x": 123,
+                  "y": 188,
+                  "h": 150,
+                  "w": 150
+                }
+              ]
+            },
+            "medium": {
+              "faces": [
+                {
+                  "x": 413,
+                  "y": 213,
+                  "h": 132,
+                  "w": 132
+                },
+                {
+                  "x": 722,
+                  "y": 133,
+                  "h": 165,
+                  "w": 165
+                },
+                {
+                  "x": 115,
+                  "y": 176,
+                  "h": 140,
+                  "w": 140
+                }
+              ]
+            },
+            "small": {
+              "faces": [
+                {
+                  "x": 234,
+                  "y": 121,
+                  "h": 74,
+                  "w": 74
+                },
+                {
+                  "x": 409,
+                  "y": 75,
+                  "h": 94,
+                  "w": 94
+                },
+                {
+                  "x": 65,
+                  "y": 99,
+                  "h": 79,
+                  "w": 79
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "x": 441,
+                  "y": 228,
+                  "h": 141,
+                  "w": 141
+                },
+                {
+                  "x": 771,
+                  "y": 142,
+                  "h": 177,
+                  "w": 177
+                },
+                {
+                  "x": 123,
+                  "y": 188,
+                  "h": 150,
+                  "w": 150
+                }
+              ]
+            }
+          },
+          "sizes": {
+            "large": {
+              "h": 1280,
+              "w": 1067,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 1200,
+              "w": 1000,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 680,
+              "w": 567,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 1280,
+            "width": 1067,
+            "focus_rects": [
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 598
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 1067
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 1216
+              },
+              {
+                "x": 427,
+                "y": 0,
+                "w": 640,
+                "h": 1280
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 1280
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "3_1999503910160265216"
+            }
+          }
+        }
+      ]
+    },
+    "card": null,
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "text": "Hyderabad"
+        },
+        {
+          "indices": [
+            57,
+            67
+          ],
+          "text": "Hyderabad"
+        }
+      ],
+      "media": [
+        {
+          "display_url": "pic.x.com/0rmSjUUhUS",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999503918846374375/photo/1",
+          "id_str": "1999503910160265216",
+          "indices": [
+            265,
+            288
+          ],
+          "media_key": "3_1999503910160265216",
+          "media_url_https": "https://pbs.twimg.com/media/G7-qNmQbcAA1CRV.jpg",
+          "type": "photo",
+          "url": "https://t.co/0rmSjUUhUS",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": [
+                {
+                  "x": 441,
+                  "y": 228,
+                  "h": 141,
+                  "w": 141
+                },
+                {
+                  "x": 771,
+                  "y": 142,
+                  "h": 177,
+                  "w": 177
+                },
+                {
+                  "x": 123,
+                  "y": 188,
+                  "h": 150,
+                  "w": 150
+                }
+              ]
+            },
+            "medium": {
+              "faces": [
+                {
+                  "x": 413,
+                  "y": 213,
+                  "h": 132,
+                  "w": 132
+                },
+                {
+                  "x": 722,
+                  "y": 133,
+                  "h": 165,
+                  "w": 165
+                },
+                {
+                  "x": 115,
+                  "y": 176,
+                  "h": 140,
+                  "w": 140
+                }
+              ]
+            },
+            "small": {
+              "faces": [
+                {
+                  "x": 234,
+                  "y": 121,
+                  "h": 74,
+                  "w": 74
+                },
+                {
+                  "x": 409,
+                  "y": 75,
+                  "h": 94,
+                  "w": 94
+                },
+                {
+                  "x": 65,
+                  "y": 99,
+                  "h": 79,
+                  "w": 79
+                }
+              ]
+            },
+            "orig": {
+              "faces": [
+                {
+                  "x": 441,
+                  "y": 228,
+                  "h": 141,
+                  "w": 141
+                },
+                {
+                  "x": 771,
+                  "y": 142,
+                  "h": 177,
+                  "w": 177
+                },
+                {
+                  "x": 123,
+                  "y": 188,
+                  "h": 150,
+                  "w": 150
+                }
+              ]
+            }
+          },
+          "sizes": {
+            "large": {
+              "h": 1280,
+              "w": 1067,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 1200,
+              "w": 1000,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 680,
+              "w": 567,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 1280,
+            "width": 1067,
+            "focus_rects": [
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 598
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 1067
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 1216
+              },
+              {
+                "x": 427,
+                "y": 0,
+                "w": 640,
+                "h": 1280
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 1067,
+                "h": 1280
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "3_1999503910160265216"
+            }
+          }
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "3171712086",
+          "name": "Rahul Gandhi",
+          "screen_name": "RahulGandhi",
+          "indices": [
+            33,
+            45
+          ]
+        },
+        {
+          "id_str": "3171712086",
+          "name": "Rahul Gandhi",
+          "screen_name": "RahulGandhi",
+          "indices": [
+            92,
+            104
+          ]
+        },
+        {
+          "id_str": "706842521796632576",
+          "name": "Revanth Reddy",
+          "screen_name": "revanth_anumula",
+          "indices": [
+            168,
+            184
+          ]
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  },
+  {
+    "type": "tweet",
+    "id": "1999499443985629631",
+    "url": "https://x.com/NewsMeter_In/status/1999499443985629631",
+    "twitterUrl": "https://twitter.com/NewsMeter_In/status/1999499443985629631",
+    "text": "#Hyderabad:\n\n#Watersupply alert – Hyderabad\n\nA major leakage occurred on the 1500 mm PSC pumping main of the #Manjeera Phase-2 pipeline near #Rudraram, disrupting drinking water supply to several parts of the city today.\n\n@HMWSSBOnline teams are carrying out emergency repair works and expect to restore supply by Saturday afternoon.\n\nAffected Areas:\n\n#Beeramguda\n#Ameenpur \n#Miyapur\n#DeeptiSrinagar\n#KPHBHousingBoard\n#Nizampet\n#Hydernagar\n#Moosapet\n#Erragadda\n\nResidents in these zones are advised to plan water usage accordingly. \n\nRepair works are in full swing.",
+    "source": "Twitter for iPhone",
+    "retweetCount": 10,
+    "replyCount": 0,
+    "likeCount": 60,
+    "quoteCount": 0,
+    "viewCount": 9531,
+    "createdAt": "Fri Dec 12 15:19:51 +0000 2025",
+    "lang": "en",
+    "bookmarkCount": 7,
+    "isReply": false,
+    "inReplyToId": null,
+    "conversationId": "1999499443985629631",
+    "displayTextRange": [
+      0,
+      276
+    ],
+    "inReplyToUserId": null,
+    "inReplyToUsername": null,
+    "author": {
+      "type": "user",
+      "userName": "NewsMeter_In",
+      "url": "https://x.com/NewsMeter_In",
+      "twitterUrl": "https://twitter.com/NewsMeter_In",
+      "id": "1154348259688603648",
+      "name": "NewsMeter",
+      "isVerified": false,
+      "isBlueVerified": true,
+      "verifiedType": null,
+      "profilePicture": "https://pbs.twimg.com/profile_images/1154348353406164993/e78toNsl_normal.png",
+      "coverPicture": "https://pbs.twimg.com/profile_banners/1154348259688603648/1568633254",
+      "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh",
+      "location": "",
+      "followers": 23842,
+      "following": 0,
+      "status": "",
+      "canDm": true,
+      "canMediaTag": true,
+      "createdAt": "Thu Jul 25 11:10:46 +0000 2019",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "NewsMeter.in",
+              "expanded_url": "http://NewsMeter.in",
+              "url": "https://t.co/UuhEX2O0yK",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "newsmeter.in",
+              "expanded_url": "https://newsmeter.in",
+              "url": "https://t.co/RThPKf7F00",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        }
+      },
+      "fastFollowersCount": 0,
+      "favouritesCount": 345,
+      "hasCustomTimelines": true,
+      "isTranslator": false,
+      "mediaCount": 11970,
+      "statusesCount": 47846,
+      "withheldInCountries": [],
+      "affiliatesHighlightedLabel": {},
+      "possiblySensitive": false,
+      "pinnedTweetIds": [],
+      "profile_bio": {
+        "description": "https://t.co/UuhEX2O0yK is an Independent digital media platform that brings you credible news, stories, analysis of current affairs in #Telangana & #AndhraPradesh"
+      },
+      "isAutomated": false,
+      "automatedBy": null
+    },
+    "extendedEntities": {
+      "media": [
+        {
+          "display_url": "pic.x.com/odXG1XyIp4",
+          "expanded_url": "https://x.com/NewsMeter_In/status/1999499443985629631/photo/1",
+          "id_str": "1999499440974102530",
+          "indices": [
+            277,
+            300
+          ],
+          "media_key": "3_1999499440974102530",
+          "media_url_https": "https://pbs.twimg.com/media/G7-mJdPagAIRUAd.jpg",
+          "type": "photo",
+          "url": "https://t.co/odXG1XyIp4",
+          "ext_media_availability": {
+            "status": "Available"
+          },
+          "features": {
+            "large": {
+              "faces": []
+            },
+            "medium": {
+              "faces": []
+            },
+            "small": {
+              "faces": []
+            },
+            "orig": {
+              "faces": []
+            }
+          },
+          "sizes": {
+            "large": {
+              "h": 1201,
+              "w": 960,
+              "resize": "fit"
+            },
+            "medium": {
+              "h": 1200,
+              "w": 959,
+              "resize": "fit"
+            },
+            "small": {
+              "h": 680,
+              "w": 544,
+              "resize": "fit"
+            },
+            "thumb": {
+              "h": 150,
+              "w": 150,
+              "resize": "crop"
+            }
+          },
+          "original_info": {
+            "height": 1201,
+            "width": 960,
+            "focus_rects": [
+              {
+                "x": 0,
+                "y": 601,
+                "w": 960,
+                "h": 538
+              },
+              {
+                "x": 0,
+                "y": 241,
+                "w": 960,
+                "h": 960
+              },
+              {
+                "x": 0,
+                "y": 107,
+                "w": 960,
+                "h": 1094
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 601,
+                "h": 1201
+              },
+              {
+                "x": 0,
+                "y": 0,
+                "w": 960,
+                "h": 1201
+              }
+            ]
+          },
+          "media_results": {
+            "result": {
+              "media_key": "3_1999499440974102530"
+            }
+          }
+        }
+      ]
+    },
+    "card": null,
+    "place": {},
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "text": "Hyderabad"
+        },
+        {
+          "indices": [
+            13,
+            25
+          ],
+          "text": "Watersupply"
+        },
+        {
+          "indices": [
+            109,
+            118
+          ],
+          "text": "Manjeera"
+        },
+        {
+          "indices": [
+            141,
+            150
+          ],
+          "text": "Rudraram"
+        },
+        {
+          "indices": [
+            352,
+            363
+          ],
+          "text": "Beeramguda"
+        },
+        {
+          "indices": [
+            364,
+            373
+          ],
+          "text": "Ameenpur"
+        },
+        {
+          "indices": [
+            375,
+            383
+          ],
+          "text": "Miyapur"
+        },
+        {
+          "indices": [
+            384,
+            399
+          ],
+          "text": "DeeptiSrinagar"
+        },
+        {
+          "indices": [
+            400,
+            417
+          ],
+          "text": "KPHBHousingBoard"
+        },
+        {
+          "indices": [
+            418,
+            427
+          ],
+          "text": "Nizampet"
+        },
+        {
+          "indices": [
+            428,
+            439
+          ],
+          "text": "Hydernagar"
+        },
+        {
+          "indices": [
+            440,
+            449
+          ],
+          "text": "Moosapet"
+        },
+        {
+          "indices": [
+            450,
+            460
+          ],
+          "text": "Erragadda"
+        }
+      ],
+      "symbols": [],
+      "timestamps": [],
+      "urls": [],
+      "user_mentions": [
+        {
+          "id_str": "779224866385895424",
+          "name": "HMWSSB",
+          "screen_name": "HMWSSBOnline",
+          "indices": [
+            222,
+            235
+          ]
+        }
+      ]
+    },
+    "quoted_tweet": null,
+    "retweeted_tweet": null,
+    "article": null
+  }
+]
