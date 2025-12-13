@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // --- CONFIGURATION ---
 const INPUT_FILE = 'daily_input.json';
-MONGODB_URI= "mongodb+srv://vijaymarka:admin123@cluster0.ivjiolu.mongodb.net/News?retryWrites=true&w=majority"
+MONGODB_URI= process.env.MONGO_URI
 
 // Initialize Gemini
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
