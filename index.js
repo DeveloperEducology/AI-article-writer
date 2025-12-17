@@ -105,7 +105,7 @@ async function formatTweetWithGemini(text) {
   const prompt = `
     You are a professional Telugu news editor.
     Rewrite this tweet into a telugu news snippet.
-    Output JSON keys: title(min telugu 8 words), summary(min telugu 65 words), content, slug_en, tags_en.
+    Output JSON keys: title(max telugu 8 words), summary(min telugu 65 words), content, slug_en, tags_en.
     Tweet: ${text}
   `;
   try {
@@ -121,8 +121,11 @@ async function formatTweetWithGemini(text) {
 app.get("/", (req, res) => res.send("<h1>✅ Server Running (MongoDB Queue)</h1>"));
 
 // API: Fetch & Queue
+// API: Fetch & Queue with Limit Support
 app.get("/api/fetch-user-last-tweets", async (req, res) => {
-  const { userName } = req.query;
+  // 1. Extract 'limit' along with 'userName'
+  const { userName, limit } = req.query;
+  
   if (!userName) return res.status(400).json({ error: "username required" });
 
   console.log(`📥 Fetching tweets for @${userName}...`);
@@ -138,25 +141,34 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
     const data = await response.json();
     let tweets = data?.tweets ?? data?.data?.tweets ?? [];
 
+    // ✅ NEW: Apply Limit if provided
+    // This ensures we only process the top 'N' latest tweets
+    if (limit) {
+        const limitNum = parseInt(limit);
+        if (!isNaN(limitNum) && limitNum > 0) {
+            tweets = tweets.slice(0, limitNum);
+            console.log(`✂️ Limit applied: Processing only top ${limitNum} tweets.`);
+        }
+    }
+
     if (tweets.length === 0) return res.json({ message: "No tweets found" });
 
-    // 1. Get IDs already in Posts
+    // 2. Get IDs already in Posts
     const postedIds = await Post.find({ tweetId: { $in: tweets.map(t => t.id) } }).distinct('tweetId');
     
-    // 2. Get IDs already in Queue
+    // 3. Get IDs already in Queue
     const queuedIds = await Queue.find({ id: { $in: tweets.map(t => t.id) } }).distinct('id');
     
     const ignoredIds = new Set([...postedIds, ...queuedIds]);
 
-    // 3. Filter new tweets
+    // 4. Filter new tweets
     const newTweets = tweets.filter(t => !ignoredIds.has(t.id));
 
     if (newTweets.length === 0) {
-      return res.json({ message: "All tweets already exist or queued." });
+      return res.json({ message: "All fetched tweets already exist or are queued." });
     }
 
-    // 4. Save to MongoDB Queue (Insert Many)
-    // We map tweet data to match our Schema structure if needed, or store raw
+    // 5. Save to MongoDB Queue
     const queueDocs = newTweets.map(t => ({
         id: t.id,
         text: t.text,
@@ -168,7 +180,7 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
     await Queue.insertMany(queueDocs);
 
     console.log(`✅ Queued ${newTweets.length} new tweets to MongoDB.`);
-    res.json({ success: true, queued_count: newTweets.length });
+    res.json({ success: true, queued_count: newTweets.length, requested_limit: limit || "All" });
 
   } catch (e) {
     console.error(e);
