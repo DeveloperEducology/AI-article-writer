@@ -37,14 +37,14 @@ app.use(express.json({ limit: '10mb' }));
 
 // --- 3. SCHEMAS ---
 
-// ✅ Queue Schema (Updated with postType)
+// Queue Schema
 const queueSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   text: String,
   url: String,
   media: Array,
   extendedEntities: Object,
-  postType: { type: String, default: "normal_post" }, // ✅ Stores the requested type
+  postType: { type: String, default: "normal_post" },
   queuedAt: { type: Date, default: Date.now }
 });
 const Queue = mongoose.models.Queue || mongoose.model("Queue", queueSchema);
@@ -56,7 +56,7 @@ const tagSchema = new mongoose.Schema({
 }, { timestamps: true });
 const Tag = mongoose.models.Tag || mongoose.model("Tag", tagSchema);
 
-// ✅ Post Schema (Updated with videoUrl)
+// Post Schema
 const postSchema = new mongoose.Schema({
     postId: { type: Number, unique: true },
     title: { type: String, required: true },
@@ -64,7 +64,7 @@ const postSchema = new mongoose.Schema({
     text: String,
     url: { type: String, unique: true, sparse: true },
     imageUrl: String,
-    videoUrl: String, // ✅ New Field for MP4 video
+    videoUrl: String,
     source: { type: String, default: "Manual" },
     sourceType: { type: String, default: "manual" },
     tweetId: { type: String, unique: true, sparse: true },
@@ -73,7 +73,7 @@ const postSchema = new mongoose.Schema({
     tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tag" }],
     publishedAt: { type: Date, default: Date.now },
     isPublished: { type: Boolean, default: true },
-    type: { type: String, default: "normal_post" }, // ✅ Stores the final post type
+    type: { type: String, default: "normal_post" },
     lang: { type: String, default: "te" }
 }, { timestamps: true, collection: "posts" });
 
@@ -123,12 +123,9 @@ async function formatTweetWithGemini(text) {
 
 app.get("/", (req, res) => res.send("<h1>✅ Server Running (MongoDB Queue)</h1>"));
 
-// API: Fetch & Queue with Limit & Type Support
+// API: Fetch & Queue
 app.get("/api/fetch-user-last-tweets", async (req, res) => {
-  // 1. Extract 'limit' and 'type' along with 'userName'
   const { userName, limit, type } = req.query;
-  
-  // ✅ Default to "normal_post" if type is missing
   const postType = type || "normal_post";
 
   if (!userName) return res.status(400).json({ error: "username required" });
@@ -146,7 +143,6 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
     const data = await response.json();
     let tweets = data?.tweets ?? data?.data?.tweets ?? [];
 
-    // Apply Limit
     if (limit) {
         const limitNum = parseInt(limit);
         if (!isNaN(limitNum) && limitNum > 0) {
@@ -157,7 +153,6 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
 
     if (tweets.length === 0) return res.json({ message: "No tweets found" });
 
-    // Deduplication logic
     const postedIds = await Post.find({ tweetId: { $in: tweets.map(t => t.id) } }).distinct('tweetId');
     const queuedIds = await Queue.find({ id: { $in: tweets.map(t => t.id) } }).distinct('id');
     const ignoredIds = new Set([...postedIds, ...queuedIds]);
@@ -167,14 +162,13 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
       return res.json({ message: "All fetched tweets already exist or are queued." });
     }
 
-    // ✅ Save to MongoDB Queue with postType
     const queueDocs = newTweets.map(t => ({
         id: t.id,
         text: t.text,
         url: t.url,
         media: t.media || [],
         extendedEntities: t.extendedEntities || {},
-        postType: postType // ✅ Passing the type to the queue
+        postType: postType
     }));
 
     await Queue.insertMany(queueDocs);
@@ -196,7 +190,6 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
 // --- 6. CRON WORKER ---
 
 cron.schedule("*/1 * * * *", async () => {
-  // 1. Fetch oldest 3 items from MongoDB Queue
   const batch = await Queue.find().sort({ queuedAt: 1 }).limit(3);
   
   if (batch.length === 0) return;
@@ -216,7 +209,7 @@ cron.schedule("*/1 * * * *", async () => {
             const tweetImage = tweet.extendedEntities?.media?.[0]?.media_url_https || 
                                tweet.media?.[0]?.media_url_https || null;
 
-            // ✅ Video Extraction Logic (Highest Bitrate MP4)
+            // Video Extraction Logic
             let tweetVideo = null;
             if (tweet.extendedEntities?.media?.[0]?.video_info?.variants) {
                 const variants = tweet.extendedEntities.media[0].video_info.variants;
@@ -227,6 +220,10 @@ cron.schedule("*/1 * * * *", async () => {
                 
                 if (bestVideo) tweetVideo = bestVideo.url;
             }
+
+            // ✅ TYPE FALLBACK LOGIC
+            // If video is missing, force type to "normal_post" regardless of what was requested
+            const finalPostType = tweetVideo ? (tweet.postType || "normal_post") : "normal_post";
 
             const newPost = new Post({
                 postId: generatePostId(),
@@ -240,22 +237,21 @@ cron.schedule("*/1 * * * *", async () => {
                 tweetId: tweet.id,
                 twitterUrl: tweet.url,
                 imageUrl: tweetImage,
-                videoUrl: tweetVideo, // ✅ Saves the best video URL
+                videoUrl: tweetVideo,
                 tags: tagIds,
                 categories: ["General"],
                 lang: 'te',
                 publishedAt: new Date(),
                 isPublished: true,
-                type: tweet.postType || "normal_post" // ✅ Uses type from Queue or default
+                type: finalPostType // ✅ Uses the calculated type
             });
 
             await newPost.save();
-            console.log(`   ✅ Saved: ${geminiData.title.substring(0, 20)}... (Type: ${newPost.type})`);
+            console.log(`   ✅ Saved: ${geminiData.title.substring(0, 20)}... (Type: ${finalPostType})`);
             
-            // ✅ Remove from Queue after success
             await Queue.deleteOne({ _id: tweet._id });
         } else {
-            console.log(`   ⚠️ Gemini failed. Removing from queue to prevent block.`);
+            console.log(`   ⚠️ Gemini failed. Removing from queue.`);
             await Queue.deleteOne({ _id: tweet._id });
         }
 
@@ -263,7 +259,6 @@ cron.schedule("*/1 * * * *", async () => {
         console.error(`   ❌ Error: ${err.message}`);
     }
 
-    // Rate Limit Wait
     if (batch.length > 1) await sleep(6000); 
   }
 });
