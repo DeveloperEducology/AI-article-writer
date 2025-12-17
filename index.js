@@ -6,7 +6,6 @@ import mongoose from "mongoose";
 import cron from "node-cron";
 import path from "path";
 import { fileURLToPath } from "url";
-// ❌ REMOVED: import fs from "fs"; 
 
 // --- 1. INITIALIZATION ---
 dotenv.config();
@@ -38,24 +37,26 @@ app.use(express.json({ limit: '10mb' }));
 
 // --- 3. SCHEMAS ---
 
-// ✅ NEW: Queue Schema (Replaces JSON file)
+// ✅ Queue Schema (Updated with postType)
 const queueSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   text: String,
   url: String,
   media: Array,
   extendedEntities: Object,
+  postType: { type: String, default: "normal_post" }, // ✅ Stores the requested type
   queuedAt: { type: Date, default: Date.now }
 });
 const Queue = mongoose.models.Queue || mongoose.model("Queue", queueSchema);
 
-// Existing Schemas...
+// Tag Schema
 const tagSchema = new mongoose.Schema({
     name: { type: String, required: true, unique: true },
     slug: { type: String, required: true, unique: true }
 }, { timestamps: true });
 const Tag = mongoose.models.Tag || mongoose.model("Tag", tagSchema);
 
+// ✅ Post Schema (Updated with videoUrl)
 const postSchema = new mongoose.Schema({
     postId: { type: Number, unique: true },
     title: { type: String, required: true },
@@ -63,6 +64,7 @@ const postSchema = new mongoose.Schema({
     text: String,
     url: { type: String, unique: true, sparse: true },
     imageUrl: String,
+    videoUrl: String, // ✅ New Field for MP4 video
     source: { type: String, default: "Manual" },
     sourceType: { type: String, default: "manual" },
     tweetId: { type: String, unique: true, sparse: true },
@@ -71,6 +73,7 @@ const postSchema = new mongoose.Schema({
     tags: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tag" }],
     publishedAt: { type: Date, default: Date.now },
     isPublished: { type: Boolean, default: true },
+    type: { type: String, default: "normal_post" }, // ✅ Stores the final post type
     lang: { type: String, default: "te" }
 }, { timestamps: true, collection: "posts" });
 
@@ -120,15 +123,17 @@ async function formatTweetWithGemini(text) {
 
 app.get("/", (req, res) => res.send("<h1>✅ Server Running (MongoDB Queue)</h1>"));
 
-// API: Fetch & Queue
-// API: Fetch & Queue with Limit Support
+// API: Fetch & Queue with Limit & Type Support
 app.get("/api/fetch-user-last-tweets", async (req, res) => {
-  // 1. Extract 'limit' along with 'userName'
-  const { userName, limit } = req.query;
+  // 1. Extract 'limit' and 'type' along with 'userName'
+  const { userName, limit, type } = req.query;
   
+  // ✅ Default to "normal_post" if type is missing
+  const postType = type || "normal_post";
+
   if (!userName) return res.status(400).json({ error: "username required" });
 
-  console.log(`📥 Fetching tweets for @${userName}...`);
+  console.log(`📥 Fetching tweets for @${userName} (Type: ${postType})...`);
   const API_URL = "https://api.twitterapi.io/twitter/user/last_tweets";
 
   try {
@@ -141,8 +146,7 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
     const data = await response.json();
     let tweets = data?.tweets ?? data?.data?.tweets ?? [];
 
-    // ✅ NEW: Apply Limit if provided
-    // This ensures we only process the top 'N' latest tweets
+    // Apply Limit
     if (limit) {
         const limitNum = parseInt(limit);
         if (!isNaN(limitNum) && limitNum > 0) {
@@ -153,34 +157,35 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
 
     if (tweets.length === 0) return res.json({ message: "No tweets found" });
 
-    // 2. Get IDs already in Posts
+    // Deduplication logic
     const postedIds = await Post.find({ tweetId: { $in: tweets.map(t => t.id) } }).distinct('tweetId');
-    
-    // 3. Get IDs already in Queue
     const queuedIds = await Queue.find({ id: { $in: tweets.map(t => t.id) } }).distinct('id');
-    
     const ignoredIds = new Set([...postedIds, ...queuedIds]);
-
-    // 4. Filter new tweets
     const newTweets = tweets.filter(t => !ignoredIds.has(t.id));
 
     if (newTweets.length === 0) {
       return res.json({ message: "All fetched tweets already exist or are queued." });
     }
 
-    // 5. Save to MongoDB Queue
+    // ✅ Save to MongoDB Queue with postType
     const queueDocs = newTweets.map(t => ({
         id: t.id,
         text: t.text,
         url: t.url,
         media: t.media || [],
-        extendedEntities: t.extendedEntities || {}
+        extendedEntities: t.extendedEntities || {},
+        postType: postType // ✅ Passing the type to the queue
     }));
 
     await Queue.insertMany(queueDocs);
 
-    console.log(`✅ Queued ${newTweets.length} new tweets to MongoDB.`);
-    res.json({ success: true, queued_count: newTweets.length, requested_limit: limit || "All" });
+    console.log(`✅ Queued ${newTweets.length} new tweets as '${postType}'.`);
+    res.json({ 
+        success: true, 
+        queued_count: newTweets.length, 
+        requested_limit: limit || "All",
+        type_assigned: postType 
+    });
 
   } catch (e) {
     console.error(e);
@@ -188,6 +193,7 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
   }
 });
 
+// --- 6. CRON WORKER ---
 
 cron.schedule("*/1 * * * *", async () => {
   // 1. Fetch oldest 3 items from MongoDB Queue
@@ -205,8 +211,22 @@ cron.schedule("*/1 * * * *", async () => {
 
         if (geminiData) {
             const tagIds = await getOrCreateTags(geminiData.tags_en);
+            
+            // Image Extraction
             const tweetImage = tweet.extendedEntities?.media?.[0]?.media_url_https || 
                                tweet.media?.[0]?.media_url_https || null;
+
+            // ✅ Video Extraction Logic (Highest Bitrate MP4)
+            let tweetVideo = null;
+            if (tweet.extendedEntities?.media?.[0]?.video_info?.variants) {
+                const variants = tweet.extendedEntities.media[0].video_info.variants;
+                // Filter for mp4 and sort by bitrate (descending)
+                const bestVideo = variants
+                    .filter(v => v.content_type === "video/mp4")
+                    .sort((a, b) => (b.bitrate || 0) - (a.bitrate || 0))[0];
+                
+                if (bestVideo) tweetVideo = bestVideo.url;
+            }
 
             const newPost = new Post({
                 postId: generatePostId(),
@@ -220,22 +240,22 @@ cron.schedule("*/1 * * * *", async () => {
                 tweetId: tweet.id,
                 twitterUrl: tweet.url,
                 imageUrl: tweetImage,
+                videoUrl: tweetVideo, // ✅ Saves the best video URL
                 tags: tagIds,
                 categories: ["General"],
                 lang: 'te',
                 publishedAt: new Date(),
                 isPublished: true,
-                type: "normal_post"
+                type: tweet.postType || "normal_post" // ✅ Uses type from Queue or default
             });
 
             await newPost.save();
-            console.log(`   ✅ Saved: ${geminiData.title.substring(0, 20)}...`);
+            console.log(`   ✅ Saved: ${geminiData.title.substring(0, 20)}... (Type: ${newPost.type})`);
             
             // ✅ Remove from Queue after success
             await Queue.deleteOne({ _id: tweet._id });
         } else {
             console.log(`   ⚠️ Gemini failed. Removing from queue to prevent block.`);
-            // Optionally: Increment a retry counter instead of deleting
             await Queue.deleteOne({ _id: tweet._id });
         }
 
