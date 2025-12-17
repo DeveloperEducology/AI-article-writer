@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // --- CONFIGURATION ---
 const INPUT_FILE = 'daily_input.json';
-MONGODB_URI= process.env.MONGO_URI
+MONGODB_URI= "mongodb+srv://vijaymarka:admin123@cluster0.ivjiolu.mongodb.net/News?retryWrites=true&w=majority"
 
 // Initialize Gemini
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
@@ -19,7 +19,7 @@ const SYSTEM_PROMPT = `
 Rewrite the following article in Telugu language.
 Output MUST be a valid JSON object:
 { 
-  "title": "String (min 8 words)", 
+  "title": "String (max 8 words)", 
   "summary": "String (min 65 words)", 
   "content": "String (min 150 words)", 
   "slug_en": "String (English URL slug)",

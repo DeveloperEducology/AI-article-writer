@@ -1,11 +1,15 @@
 import express from "express";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 import dotenv from "dotenv";
 import cors from "cors";
 import mongoose from "mongoose";
 import cron from "node-cron";
 import path from "path";
 import { fileURLToPath } from "url";
+import axios from "axios";
+import sharp from "sharp";
+import multer from "multer";
 
 // --- 1. INITIALIZATION ---
 dotenv.config();
@@ -21,8 +25,22 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const MONGO_URI = process.env.MONGO_URI;
 const TWITTER_API_IO_KEY = process.env.TWITTER_API_KEY;
 
+// AWS Config
+const AWS_BUCKET_NAME = process.env.AWS_BUCKET_NAME;
+const AWS_REGION = process.env.AWS_REGION;
+const s3Client = new S3Client({
+  region: AWS_REGION,
+  credentials: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  },
+});
+
+// Multer Config (Memory Storage for Sharp Processing)
+const upload = multer({ storage: multer.memoryStorage() });
+
 // --- VALIDATION ---
-if (!GEMINI_API_KEY || !MONGO_URI || !TWITTER_API_IO_KEY) {
+if (!GEMINI_API_KEY || !MONGO_URI || !TWITTER_API_IO_KEY || !process.env.AWS_ACCESS_KEY_ID) {
   console.error("❌ CRITICAL ERROR: Missing keys in .env file.");
   process.exit(1);
 }
@@ -33,7 +51,7 @@ mongoose.connect(MONGO_URI)
   .catch((err) => console.error("❌ MongoDB Error:", err));
 
 app.use(cors());
-app.use(express.json({ limit: '10mb' }));
+app.use(express.json({ limit: '50mb' }));
 
 // --- 3. SCHEMAS ---
 
@@ -104,6 +122,37 @@ async function getOrCreateTags(tagNames) {
     return tagIds;
 }
 
+// ✅ Image Processing & Upload Helper (Used by Worker & API)
+async function processBufferAndUpload(buffer, folder = "posts", slug = "image") {
+    try {
+        // 1. Resize & Convert to WebP
+        const optimizedBuffer = await sharp(buffer)
+            .resize({ width: 1080, withoutEnlargement: true })
+            .webp({ quality: 80 })
+            .toBuffer();
+
+        // 2. Generate Filename
+        const fileName = `${folder}/${slug}-${Date.now()}.webp`;
+
+        // 3. Upload to S3
+        const command = new PutObjectCommand({
+            Bucket: AWS_BUCKET_NAME,
+            Key: fileName,
+            Body: optimizedBuffer,
+            ContentType: "image/webp",
+        });
+
+        await s3Client.send(command);
+
+        // 4. Return URL
+        return `https://${AWS_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/${fileName}`;
+
+    } catch (error) {
+        console.error("❌ S3 Upload Helper Error:", error);
+        throw error;
+    }
+}
+
 async function formatTweetWithGemini(text) {
   const prompt = `
     You are a professional Telugu news editor.
@@ -121,9 +170,11 @@ async function formatTweetWithGemini(text) {
 
 // --- 5. ROUTES ---
 
-app.get("/", (req, res) => res.send("<h1>✅ Server Running (MongoDB Queue)</h1>"));
+app.get("/", (req, res) => res.send("<h1>✅ Server Running (MongoDB + S3 + Auto Queue)</h1>"));
 
-// API: Fetch & Queue
+// ---------------------------------------------------------
+// ROUTE 1: Fetch Tweets & Queue
+// ---------------------------------------------------------
 app.get("/api/fetch-user-last-tweets", async (req, res) => {
   const { userName, limit, type } = req.query;
   const postType = type || "normal_post";
@@ -187,6 +238,27 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
   }
 });
 
+// ---------------------------------------------------------
+// ROUTE 2: Manual Image Upload (POST)
+// ---------------------------------------------------------
+app.post("/api/upload", upload.single("file"), async (req, res) => {
+    try {
+      if (!req.file) return res.status(400).json({ error: "No file uploaded" });
+  
+      console.log(`📤 Uploading file: ${req.file.originalname}`);
+  
+      // Use helper to Process & Upload
+      const s3Url = await processBufferAndUpload(req.file.buffer, "uploads", "manual");
+  
+      console.log(`✅ Upload Success: ${s3Url}`);
+      res.json({ url: s3Url });
+  
+    } catch (error) {
+      console.error("❌ Upload Endpoint Error:", error);
+      res.status(500).json({ error: "Image upload failed" });
+    }
+});
+
 // --- 6. CRON WORKER ---
 
 cron.schedule("*/1 * * * *", async () => {
@@ -205,11 +277,29 @@ cron.schedule("*/1 * * * *", async () => {
         if (geminiData) {
             const tagIds = await getOrCreateTags(geminiData.tags_en);
             
-            // Image Extraction
-            const tweetImage = tweet.extendedEntities?.media?.[0]?.media_url_https || 
-                               tweet.media?.[0]?.media_url_https || null;
+            // 1. Image Logic: Download -> Resize -> Upload S3
+            let tweetImage = tweet.extendedEntities?.media?.[0]?.media_url_https || 
+                             tweet.media?.[0]?.media_url_https || null;
+            
+            if (tweetImage) {
+                try {
+                    console.log(`   🎨 Downloading Image: ${tweetImage}`);
+                    const response = await axios({ url: tweetImage, responseType: "arraybuffer" });
+                    
+                    // Upload via Helper
+                    tweetImage = await processBufferAndUpload(
+                        Buffer.from(response.data), 
+                        "posts", 
+                        geminiData.slug_en || 'tweet-img'
+                    );
+                    console.log(`   🚀 Image Optimised & Uploaded: ${tweetImage}`);
+                } catch (imgErr) {
+                    console.error(`   ⚠️ Image Processing Failed (Using Original): ${imgErr.message}`);
+                    // Fallback to original URL if upload fails
+                }
+            }
 
-            // Video Extraction Logic
+            // 2. Video Logic: Find Best MP4
             let tweetVideo = null;
             if (tweet.extendedEntities?.media?.[0]?.video_info?.variants) {
                 const variants = tweet.extendedEntities.media[0].video_info.variants;
@@ -221,8 +311,7 @@ cron.schedule("*/1 * * * *", async () => {
                 if (bestVideo) tweetVideo = bestVideo.url;
             }
 
-            // ✅ TYPE FALLBACK LOGIC
-            // If video is missing, force type to "normal_post" regardless of what was requested
+            // 3. Fallback Logic: Force normal_post if video missing
             const finalPostType = tweetVideo ? (tweet.postType || "normal_post") : "normal_post";
 
             const newPost = new Post({
@@ -236,14 +325,14 @@ cron.schedule("*/1 * * * *", async () => {
                 isTwitterLink: true,
                 tweetId: tweet.id,
                 twitterUrl: tweet.url,
-                imageUrl: tweetImage,
+                imageUrl: tweetImage, // ✅ S3 URL (WebP)
                 videoUrl: tweetVideo,
                 tags: tagIds,
                 categories: ["General"],
                 lang: 'te',
                 publishedAt: new Date(),
                 isPublished: true,
-                type: finalPostType // ✅ Uses the calculated type
+                type: finalPostType // ✅ Fallback applied
             });
 
             await newPost.save();
