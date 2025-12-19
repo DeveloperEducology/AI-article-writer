@@ -319,7 +319,7 @@ cron.schedule("*/1 * * * *", async () => {
                 title: geminiData.title,
                 summary: geminiData.summary,
                 text: geminiData.content,
-                url: geminiData.slug_en ? `${geminiData.slug_en}-${Date.now()}` : `post-${Date.now()}`,
+                url: '',
                 source: "Manual",
                 sourceType: "tweet_api",
                 isTwitterLink: true,
