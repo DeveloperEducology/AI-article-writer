@@ -321,7 +321,7 @@ cron.schedule("*/1 * * * *", async () => {
                 text: geminiData.content,
                 url: '',
                 source: "Manual",
-                sourceType: "tweet_api",
+                sourceType: "manual",
                 isTwitterLink: true,
                 tweetId: tweet.id,
                 twitterUrl: tweet.url,
