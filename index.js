@@ -62,6 +62,7 @@ const queueSchema = new mongoose.Schema({
   url: String,
   media: Array,
   extendedEntities: Object,
+  user: Object, 
   postType: { type: String, default: "normal_post" },
   queuedAt: { type: Date, default: Date.now }
 });
@@ -81,8 +82,18 @@ const postSchema = new mongoose.Schema({
     summary: String,
     text: String,
     url: { type: String, unique: true, sparse: true },
-    imageUrl: String,
+    imageUrl: String, 
     videoUrl: String,
+    
+    // Renamed 'type' to 'mediaType' to avoid Mongoose keyword conflict
+    media: [{ 
+        mediaType: { type: String, default: 'image' }, 
+        url: String,
+        width: Number,
+        height: Number
+    }], 
+    sourceName: String, 
+    
     source: { type: String, default: "Manual" },
     sourceType: { type: String, default: "manual" },
     tweetId: { type: String, unique: true, sparse: true },
@@ -108,6 +119,14 @@ const model = genAI.getGenerativeModel({
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const generatePostId = () => Math.floor(100000000 + Math.random() * 900000000);
 
+// ✅ NEW HELPER: Extract Handle from URL
+const getHandleFromUrl = (url) => {
+    if (!url) return null;
+    // Matches x.com/username or twitter.com/username
+    const match = url.match(/(?:twitter\.com|x\.com)\/([^\/]+)/);
+    return match ? match[1] : null;
+};
+
 async function getOrCreateTags(tagNames) {
     if (!tagNames || !Array.isArray(tagNames)) return [];
     const tagIds = [];
@@ -122,19 +141,16 @@ async function getOrCreateTags(tagNames) {
     return tagIds;
 }
 
-// ✅ Image Processing & Upload Helper (Used by Worker & API)
+// ✅ Image Processing & Upload Helper (KEPT FOR FUTURE USE)
 async function processBufferAndUpload(buffer, folder = "posts", slug = "image") {
     try {
-        // 1. Resize & Convert to WebP
         const optimizedBuffer = await sharp(buffer)
             .resize({ width: 1080, withoutEnlargement: true })
             .webp({ quality: 80 })
             .toBuffer();
 
-        // 2. Generate Filename
         const fileName = `${folder}/${slug}-${Date.now()}.webp`;
 
-        // 3. Upload to S3
         const command = new PutObjectCommand({
             Bucket: AWS_BUCKET_NAME,
             Key: fileName,
@@ -144,7 +160,6 @@ async function processBufferAndUpload(buffer, folder = "posts", slug = "image") 
 
         await s3Client.send(command);
 
-        // 4. Return URL
         return `https://${AWS_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/${fileName}`;
 
     } catch (error) {
@@ -153,9 +168,25 @@ async function processBufferAndUpload(buffer, folder = "posts", slug = "image") 
     }
 }
 
-async function formatTweetWithGemini(text) {
+// ✅ Gemini Formatter
+async function formatTweetWithGemini(text, authorName) {
   const prompt = `
-    You are a professional Telugu news editor.
+    Act as a professional Telugu news editor.
+
+    Write a factual Telugu news article in a neutral, journalistic tone.
+    
+    Structure:
+    1. Strong opening context.
+    2. Main incident details.
+    3. Specifics/Unusual aspects.
+    4. Reactions (if any).
+    5. Conclusion.
+
+    Writing rules:
+    - Pure, simple Telugu.
+    - No clickbait.
+    - Neutral tone.
+
     Rewrite this tweet into a telugu news snippet.
     Output JSON keys: title(max telugu 8 words), summary(min telugu 65 words), content, slug_en, tags_en.
     Tweet: ${text}
@@ -173,7 +204,7 @@ async function formatTweetWithGemini(text) {
 app.get("/", (req, res) => res.send("<h1>✅ Server Running (MongoDB + S3 + Auto Queue)</h1>"));
 
 // ---------------------------------------------------------
-// ROUTE 1: Fetch Tweets & Queue
+// ROUTE 1: Fetch Tweets by User & Queue
 // ---------------------------------------------------------
 app.get("/api/fetch-user-last-tweets", async (req, res) => {
   const { userName, limit, type } = req.query;
@@ -181,7 +212,7 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
 
   if (!userName) return res.status(400).json({ error: "username required" });
 
-  console.log(`📥 Fetching tweets for @${userName} (Type: ${postType})...`);
+  console.log(`📥 Fetching tweets for @${userName}...`);
   const API_URL = "https://api.twitterapi.io/twitter/user/last_tweets";
 
   try {
@@ -196,41 +227,40 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
 
     if (limit) {
         const limitNum = parseInt(limit);
-        if (!isNaN(limitNum) && limitNum > 0) {
-            tweets = tweets.slice(0, limitNum);
-            console.log(`✂️ Limit applied: Processing only top ${limitNum} tweets.`);
-        }
+        if (!isNaN(limitNum) && limitNum > 0) tweets = tweets.slice(0, limitNum);
     }
 
     if (tweets.length === 0) return res.json({ message: "No tweets found" });
 
+    // Check duplicates
     const postedIds = await Post.find({ tweetId: { $in: tweets.map(t => t.id) } }).distinct('tweetId');
     const queuedIds = await Queue.find({ id: { $in: tweets.map(t => t.id) } }).distinct('id');
     const ignoredIds = new Set([...postedIds, ...queuedIds]);
     const newTweets = tweets.filter(t => !ignoredIds.has(t.id));
 
-    if (newTweets.length === 0) {
-      return res.json({ message: "All fetched tweets already exist or are queued." });
-    }
+    if (newTweets.length === 0) return res.json({ message: "All fetched tweets already exist or are queued." });
 
-    const queueDocs = newTweets.map(t => ({
-        id: t.id,
-        text: t.text,
-        url: t.url,
-        media: t.media || [],
-        extendedEntities: t.extendedEntities || {},
-        postType: postType
-    }));
+    // Insert
+    const queueDocs = newTweets.map(t => {
+        const userInfo = t.user || { screen_name: userName, name: userName };
+        return {
+            id: t.id,
+            text: t.text,
+            url: t.url,
+            media: t.media || [],
+            extendedEntities: t.extendedEntities || {},
+            user: {
+                name: userInfo.name,
+                screen_name: userInfo.screen_name,
+                profile_image_url_https: userInfo.profile_image_url_https
+            },
+            postType: postType
+        };
+    });
 
     await Queue.insertMany(queueDocs);
-
-    console.log(`✅ Queued ${newTweets.length} new tweets as '${postType}'.`);
-    res.json({ 
-        success: true, 
-        queued_count: newTweets.length, 
-        requested_limit: limit || "All",
-        type_assigned: postType 
-    });
+    console.log(`✅ Queued ${newTweets.length} new tweets from @${userName}`);
+    res.json({ success: true, queued_count: newTweets.length });
 
   } catch (e) {
     console.error(e);
@@ -239,20 +269,94 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
 });
 
 // ---------------------------------------------------------
-// ROUTE 2: Manual Image Upload (POST)
+// ROUTE 2: Fetch Specific Tweets by IDs
+// ---------------------------------------------------------
+app.get("/api/fetch-tweets-by-ids", async (req, res) => {
+    const { tweet_ids, type, hasAuthor } = req.query; // Expecting comma-separated string
+    const postType = type || "normal_post";
+  
+    if (!tweet_ids) {
+      return res.status(400).json({ error: "tweet_ids required (comma separated)" });
+    }
+  
+    console.log(`📥 Fetching specific tweet IDs: ${tweet_ids}`);
+    const API_URL = "https://api.twitterapi.io/twitter/tweets";
+  
+    try {
+      const response = await fetch(`${API_URL}?tweet_ids=${tweet_ids}`, {
+        headers: { "X-API-Key": TWITTER_API_IO_KEY },
+      });
+      
+      if (!response.ok) return res.status(response.status).json({ error: await response.text() });
+  
+      const data = await response.json();
+      const tweets = data?.tweets ?? [];
+  
+      if (tweets.length === 0) return res.json({ message: "No tweets found for provided IDs" });
+  
+      const postedIds = await Post.find({ tweetId: { $in: tweets.map(t => t.id) } }).distinct('tweetId');
+      const queuedIds = await Queue.find({ id: { $in: tweets.map(t => t.id) } }).distinct('id');
+      const ignoredIds = new Set([...postedIds, ...queuedIds]);
+      const newTweets = tweets.filter(t => !ignoredIds.has(t.id));
+  
+      if (newTweets.length === 0) return res.json({ message: "All provided tweets already exist or are queued." });
+  
+      // --- Prepare Queue Documents ---
+      const queueDocs = newTweets.map(t => {
+          // ✅ TRY TO GET USER INFO FROM OBJECT, ELSE EXTRACT FROM URL
+          let screenName = t.user?.screen_name;
+          let name = t.user?.name;
+
+          if (!screenName) {
+              const handle = getHandleFromUrl(t.url);
+              if (handle) {
+                  screenName = handle;
+                  name = handle; // Use handle as name if name missing
+              } else {
+                  screenName = "Unknown";
+                  name = "Twitter User";
+              }
+          }
+
+          const userInfo = {
+              name: name,
+              screen_name: screenName,
+              profile_image_url_https: t.user?.profile_image_url_https
+          };
+          
+          return {
+              id: t.id,
+              text: t.text,
+              url: t.url,
+              media: t.media || [],
+              extendedEntities: t.extendedEntities || {},
+              user: userInfo,
+              postType: postType
+          };
+      });
+  
+      await Queue.insertMany(queueDocs);
+  
+      console.log(`✅ Queued ${newTweets.length} specific tweets.`);
+      res.json({ 
+          success: true, 
+          queued_count: newTweets.length, 
+          type_assigned: postType 
+      });
+  
+    } catch (e) {
+      console.error(e);
+      res.status(500).json({ error: e.message });
+    }
+});
+// ---------------------------------------------------------
+// ROUTE 3: Manual Image Upload
 // ---------------------------------------------------------
 app.post("/api/upload", upload.single("file"), async (req, res) => {
     try {
       if (!req.file) return res.status(400).json({ error: "No file uploaded" });
-  
-      console.log(`📤 Uploading file: ${req.file.originalname}`);
-  
-      // Use helper to Process & Upload
       const s3Url = await processBufferAndUpload(req.file.buffer, "uploads", "manual");
-  
-      console.log(`✅ Upload Success: ${s3Url}`);
       res.json({ url: s3Url });
-  
     } catch (error) {
       console.error("❌ Upload Endpoint Error:", error);
       res.status(500).json({ error: "Image upload failed" });
@@ -272,46 +376,68 @@ cron.schedule("*/1 * * * *", async () => {
     try {
         console.log(`   Processing Tweet ID: ${tweet.id}...`);
 
-        const geminiData = await formatTweetWithGemini(tweet.text);
+        // ✅ FINAL AUTHOR CHECK: User Object vs URL Extraction
+        let authorHandle = tweet.user?.screen_name;
+        let authorDisplayName = tweet.user?.name;
+
+        // If handle is missing or generic, try extracting from URL again (Safety Net)
+        if (!authorHandle || authorHandle === "Unknown" || authorHandle === "Twitter User") {
+            const extracted = getHandleFromUrl(tweet.url);
+            if (extracted) {
+                authorHandle = extracted;
+                // If the display name is also generic, update it to the handle
+                if (!authorDisplayName || authorDisplayName === "Twitter User") {
+                    authorDisplayName = extracted;
+                }
+            }
+        }
+
+        const authorName = authorDisplayName 
+            ? `${authorDisplayName} (@${authorHandle})` 
+            : "Social Media User";
+
+        const geminiData = await formatTweetWithGemini(tweet.text, authorName);
 
         if (geminiData) {
             const tagIds = await getOrCreateTags(geminiData.tags_en);
             
-            // 1. Image Logic: Download -> Resize -> Upload S3
-            let tweetImage = tweet.extendedEntities?.media?.[0]?.media_url_https || 
-                             tweet.media?.[0]?.media_url_https || null;
-            
-            if (tweetImage) {
-                try {
-                    console.log(`   🎨 Downloading Image: ${tweetImage}`);
-                    const response = await axios({ url: tweetImage, responseType: "arraybuffer" });
-                    
-                    // Upload via Helper
-                    tweetImage = await processBufferAndUpload(
-                        Buffer.from(response.data), 
-                        "posts", 
-                        geminiData.slug_en || 'tweet-img'
-                    );
-                    console.log(`   🚀 Image Optimised & Uploaded: ${tweetImage}`);
-                } catch (imgErr) {
-                    console.error(`   ⚠️ Image Processing Failed (Using Original): ${imgErr.message}`);
-                    // Fallback to original URL if upload fails
+            // --- MULTI-MEDIA PROCESSING ---
+            let mediaArray = [];
+            let mainImageUrl = null;
+            const mediaEntities = tweet.extendedEntities?.media || tweet.media || [];
+            const photoEntities = mediaEntities.filter(m => m.type === 'photo');
+
+            if (photoEntities.length > 0) {
+                console.log(`   🎨 Found ${photoEntities.length} photos. processing...`);
+                for (const [index, mediaItem] of photoEntities.entries()) {
+                    try {
+                        const originalUrl = mediaItem.media_url_https;
+                        
+                        console.log(`      Using Direct Twitter URL for photo ${index + 1}: ${originalUrl}`);
+                        mediaArray.push({
+                            mediaType: 'image',
+                            url: originalUrl, 
+                            width: mediaItem.original_info?.width || mediaItem.sizes?.large?.w || 0,
+                            height: mediaItem.original_info?.height || mediaItem.sizes?.large?.h || 0
+                        });
+
+                        if (index === 0) mainImageUrl = originalUrl;
+
+                    } catch (imgErr) {
+                        console.error(`      ⚠️ Photo ${index + 1} Failed: ${imgErr.message}`);
+                    }
                 }
             }
 
-            // 2. Video Logic: Find Best MP4
             let tweetVideo = null;
-            if (tweet.extendedEntities?.media?.[0]?.video_info?.variants) {
-                const variants = tweet.extendedEntities.media[0].video_info.variants;
-                // Filter for mp4 and sort by bitrate (descending)
-                const bestVideo = variants
+            if (mediaEntities.length > 0 && mediaEntities[0].type === 'video' && mediaEntities[0].video_info?.variants) {
+                 const variants = mediaEntities[0].video_info.variants;
+                 const bestVideo = variants
                     .filter(v => v.content_type === "video/mp4")
                     .sort((a, b) => (b.bitrate || 0) - (a.bitrate || 0))[0];
-                
-                if (bestVideo) tweetVideo = bestVideo.url;
+                if (bestVideo) tweetVideo = bestVideo.url; 
             }
 
-            // 3. Fallback Logic: Force normal_post if video missing
             const finalPostType = tweetVideo ? (tweet.postType || "normal_post") : "normal_post";
 
             const newPost = new Post({
@@ -320,24 +446,25 @@ cron.schedule("*/1 * * * *", async () => {
                 summary: geminiData.summary,
                 text: geminiData.content,
                 url: '',
-                source: "Manual",
-                sourceType: "manual",
+                source: "Twitter",
+                sourceName: authorName, 
+                sourceType: "twitter",
                 isTwitterLink: true,
                 tweetId: tweet.id,
                 twitterUrl: tweet.url,
-                imageUrl: tweetImage, // ✅ S3 URL (WebP)
+                imageUrl: mainImageUrl, 
                 videoUrl: tweetVideo,
+                media: mediaArray, 
                 tags: tagIds,
                 categories: ["General"],
                 lang: 'te',
                 publishedAt: new Date(),
                 isPublished: true,
-                type: finalPostType // ✅ Fallback applied
+                type: finalPostType 
             });
 
             await newPost.save();
-            console.log(`   ✅ Saved: ${geminiData.title.substring(0, 20)}... (Type: ${finalPostType})`);
-            
+            console.log(`   ✅ Saved: ${geminiData.title.substring(0, 20)}... | Author: ${authorName}`);
             await Queue.deleteOne({ _id: tweet._id });
         } else {
             console.log(`   ⚠️ Gemini failed. Removing from queue.`);
@@ -353,3 +480,6 @@ cron.schedule("*/1 * * * *", async () => {
 });
 
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+
+
+
