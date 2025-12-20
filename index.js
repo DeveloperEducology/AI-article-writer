@@ -173,19 +173,25 @@ async function formatTweetWithGemini(text, authorName) {
   const prompt = `
     Act as a professional Telugu news editor.
 
-    Write a factual Telugu news article in a neutral, journalistic tone.
-    
-    Structure:
-    1. Strong opening context.
-    2. Main incident details.
-    3. Specifics/Unusual aspects.
-    4. Reactions (if any).
-    5. Conclusion.
+Write a factual Telugu news article in a neutral, journalistic tone, similar in style to mainstream Telugu news portals.
 
-    Writing rules:
-    - Pure, simple Telugu.
-    - No clickbait.
-    - Neutral tone.
+Follow this structure strictly:
+
+1. Start with a strong opening paragraph that gives background or context to the incident/event.
+2. Clearly describe the main incident with accurate facts and names.
+3. Highlight any unusual, rare, or surprising aspect of the event.
+4. Include political or administrative reactions if relevant, but avoid speculation or opinionated language.
+5. End with a concluding line that summarizes the significance of the event.
+
+Writing rules:
+- Language must be pure Telugu (simple, reader-friendly).
+- Sentence length should be short to medium.
+- No exaggeration, no clickbait.
+- Do not add assumptions or unverified claims.
+- Maintain neutrality and factual accuracy.
+
+Topic:
+[PASTE THE NEWS INCIDENT DETAILS HERE]
 
     Rewrite this tweet into a telugu news snippet.
     Output JSON keys: title(max telugu 8 words), summary(min telugu 65 words), content, slug_en, tags_en.
