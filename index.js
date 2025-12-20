@@ -168,35 +168,35 @@ async function processBufferAndUpload(buffer, folder = "posts", slug = "image") 
     }
 }
 
-// ✅ Gemini Formatter
+// ✅ Gemini Formatter: STRICT JOURNALISTIC TONE
 async function formatTweetWithGemini(text, authorName) {
   const prompt = `
-    Act as a professional Telugu news editor.
+    Role: Professional Telugu News Editor.
+    
+    Task: Convert the provided information into a formal, neutral, and factual Telugu news report.
 
-Write a factual Telugu news article in a neutral, journalistic tone, similar in style to mainstream Telugu news portals.
+    Strict Guidelines:
+    1. **NO First-Person Perspective:** Do not use "I", "We", "My", or write as if you are the author of the tweet. Write in the third person (objective voice).
+    2. **Neutral Tone:** The writing must be professional, unbiased, and suitable for a mainstream news portal.
+    3. **Focus on Facts:** Describe the event, incident, or update clearly. If the tweet is an opinion, report it as "According to reports..." or "It is being discussed that...".
+    4. **Structure:**
+       - **Title:** Engaging but factual headline (Max 8 words in Telugu).
+       - **Summary:** A concise overview of the news (Min 65 words in Telugu).
+       - **Content:** The detailed report. Start with the context, explain the main event, and conclude with the significance or outcome.
 
-Follow this structure strictly:
+    Input Data (Tweet):
+    "${text}"
 
-1. Start with a strong opening paragraph that gives background or context to the incident/event.
-2. Clearly describe the main incident with accurate facts and names.
-3. Highlight any unusual, rare, or surprising aspect of the event.
-4. Include political or administrative reactions if relevant, but avoid speculation or opinionated language.
-5. End with a concluding line that summarizes the significance of the event.
-
-Writing rules:
-- Language must be pure Telugu (simple, reader-friendly).
-- Sentence length should be short to medium.
-- No exaggeration, no clickbait.
-- Do not add assumptions or unverified claims.
-- Maintain neutrality and factual accuracy.
-
-Topic:
-[PASTE THE NEWS INCIDENT DETAILS HERE]
-
-    Rewrite this tweet into a telugu news snippet.
-    Output JSON keys: title(max telugu 8 words), summary(min telugu 65 words), content, slug_en, tags_en.
-    Tweet: ${text}
+    Output JSON Format:
+    {
+      "title": "Telugu Title",
+      "summary": "Telugu Summary",
+      "content": "Telugu Content",
+      "slug_en": "english-slug-for-url",
+      "tags_en": ["tag1", "tag2"]
+    }
   `;
+  
   try {
     const result = await model.generateContent(prompt);
     return JSON.parse(result.response.text());
@@ -280,33 +280,33 @@ app.get("/api/fetch-user-last-tweets", async (req, res) => {
 app.get("/api/fetch-tweets-by-ids", async (req, res) => {
     const { tweet_ids, type, hasAuthor } = req.query; // Expecting comma-separated string
     const postType = type || "normal_post";
-  
+   
     if (!tweet_ids) {
       return res.status(400).json({ error: "tweet_ids required (comma separated)" });
     }
-  
+   
     console.log(`📥 Fetching specific tweet IDs: ${tweet_ids}`);
     const API_URL = "https://api.twitterapi.io/twitter/tweets";
-  
+   
     try {
       const response = await fetch(`${API_URL}?tweet_ids=${tweet_ids}`, {
         headers: { "X-API-Key": TWITTER_API_IO_KEY },
       });
       
       if (!response.ok) return res.status(response.status).json({ error: await response.text() });
-  
+   
       const data = await response.json();
       const tweets = data?.tweets ?? [];
-  
+   
       if (tweets.length === 0) return res.json({ message: "No tweets found for provided IDs" });
-  
+   
       const postedIds = await Post.find({ tweetId: { $in: tweets.map(t => t.id) } }).distinct('tweetId');
       const queuedIds = await Queue.find({ id: { $in: tweets.map(t => t.id) } }).distinct('id');
       const ignoredIds = new Set([...postedIds, ...queuedIds]);
       const newTweets = tweets.filter(t => !ignoredIds.has(t.id));
-  
+   
       if (newTweets.length === 0) return res.json({ message: "All provided tweets already exist or are queued." });
-  
+   
       // --- Prepare Queue Documents ---
       const queueDocs = newTweets.map(t => {
           // ✅ TRY TO GET USER INFO FROM OBJECT, ELSE EXTRACT FROM URL
@@ -340,16 +340,16 @@ app.get("/api/fetch-tweets-by-ids", async (req, res) => {
               postType: postType
           };
       });
-  
+   
       await Queue.insertMany(queueDocs);
-  
+   
       console.log(`✅ Queued ${newTweets.length} specific tweets.`);
       res.json({ 
           success: true, 
           queued_count: newTweets.length, 
           type_assigned: postType 
       });
-  
+   
     } catch (e) {
       console.error(e);
       res.status(500).json({ error: e.message });
@@ -486,6 +486,3 @@ cron.schedule("*/1 * * * *", async () => {
 });
 
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-
-
-
