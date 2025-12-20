@@ -369,6 +369,62 @@ app.post("/api/upload", upload.single("file"), async (req, res) => {
     }
 });
 
+
+// ---------------------------------------------------------
+// ROUTE 4: Create Manual Posts (Bulk) - NEW ENDPOINT
+// ---------------------------------------------------------
+app.post("/api/create-manual-posts", async (req, res) => {
+    try {
+        const postsArray = req.body;
+
+        if (!Array.isArray(postsArray) || postsArray.length === 0) {
+            return res.status(400).json({ error: "Input must be a non-empty array of objects." });
+        }
+
+        console.log(`📥 Received ${postsArray.length} manual posts to create.`);
+
+        const newPosts = postsArray.map(post => {
+            // Determine categories: Ensure it's an array
+            let categories = ["General"];
+            if (post.categories) {
+                categories = Array.isArray(post.categories) ? post.categories : [post.categories];
+            }
+
+            return {
+                postId: generatePostId(),
+                title: post.title,
+                summary: post.summary,
+                // If 'content' isn't provided, fallback to summary
+                text: post.content || post.summary, 
+                imageUrl: post.imageUrl || null,
+                videoUrl: post.videoUrl || null,
+                source: post.source || "Manual",
+                sourceType: "manual",
+                categories: categories,
+                isPublished: true,
+                publishedAt: new Date(),
+                type: post.type || "normal_post",
+                lang: "te" // Default language
+            };
+        });
+
+        // Bulk insert for efficiency
+        await Post.insertMany(newPosts);
+
+        console.log(`✅ Successfully created ${newPosts.length} manual posts.`);
+        res.json({ 
+            success: true, 
+            count: newPosts.length, 
+            message: "Manual posts created successfully." 
+        });
+
+    } catch (error) {
+        console.error("❌ Manual Post Creation Error:", error);
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 // --- 6. CRON WORKER ---
 
 cron.schedule("*/1 * * * *", async () => {
