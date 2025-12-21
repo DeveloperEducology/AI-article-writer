@@ -220,7 +220,7 @@ async function fetchAndQueueTweetsForHandle(userName) {
 }
 
 // ✅ GEMINI FORMATTER: STRICT GENERAL JOURNALISTIC STYLE
-async function formatTweetWithGemini(text, tweetUrl, authorName) {
+async function formatTweetWithGemini() {
   
   // Notice: We do NOT toggle logic based on authorName anymore.
   // We strictly ask for a General News Report.
@@ -228,18 +228,23 @@ async function formatTweetWithGemini(text, tweetUrl, authorName) {
   const prompt = `
     Act as a professional Telugu news editor.
 
-    Task: Convert the provided social media update into a **formal, neutral, and factual Telugu news report**.
+Write a factual Telugu news article in a neutral, journalistic tone, similar in style to mainstream Telugu news portals.
 
-    **Source Context:**
-    - Original Source URL: ${tweetUrl}
-    - Original Poster: ${authorName || "Online Source"} (Use this only for verification. Do NOT center the article around "This person said X". Center it around "X happened").
+Follow this structure strictly:
 
-    **Strict Writing Guidelines:**
-    1. **General Journalistic Style:** Write as a standard news article found in a newspaper (e.g., "Reports indicate...", "It has been announced...", "New details emerged regarding...").
-    2. **Third-Person Perspective:** Do not use "I", "me", or "my". 
-    3. **Focus on Facts:** Prioritize the event, incident, or information. If it is an opinion, frame it neutrally (e.g., "Opinions are being expressed that...").
-    4. **No "Twitter" Jargon:** Avoid phrases like "In a tweet...", "Users are saying...". Treat the content as raw news data.
-    
+1. Start with a strong opening paragraph that gives background or context to the incident/event.
+2. Clearly describe the main incident with accurate facts and names.
+3. Highlight any unusual, rare, or surprising aspect of the event.
+4. Include political or administrative reactions if relevant, but avoid speculation or opinionated language.
+5. End with a concluding line that summarizes the significance of the event.
+
+Writing rules:
+- Language must be pure Telugu (simple, reader-friendly).
+- Sentence length should be short to medium.
+- No exaggeration, no clickbait.
+- Do not add assumptions or unverified claims.
+- Maintain neutrality and factual accuracy.
+
     **Structure:**
     - **Title:** Engaging, factual headline (Max 8 words in Telugu).
     - **Summary:** Concise overview of the *event* (Min 65 words in Telugu).
@@ -247,8 +252,6 @@ async function formatTweetWithGemini(text, tweetUrl, authorName) {
 
     Rewrite this text into a Telugu news snippet.
     Output JSON keys: title, summary, content, slug_en, tags_en.
-    
-    Input Text: "${text}"
   `;
 
   try {
