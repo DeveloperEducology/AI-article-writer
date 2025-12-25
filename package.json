@@ -15,6 +15,7 @@
     "@google-cloud/storage": "^7.17.3",
     "@google/generative-ai": "^0.24.1",
     "axios": "^1.13.2",
+    "cheerio": "^1.1.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
@@ -22,6 +23,8 @@
     "multer": "^2.0.2",
     "node-cron": "^4.2.1",
     "nodemon": "^3.1.11",
-    "sharp": "^0.34.5"
+    "rss-parser": "^3.13.0",
+    "sharp": "^0.34.5",
+    "string-similarity": "^4.0.4"
   }
 }

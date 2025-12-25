@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Queue (Port 4000)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f9; }
+        textarea { width: 100%; height: 200px; font-family: monospace; padding: 10px; border: 1px solid #ccc; }
+        button { background: #2563eb; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { opacity: 0.9; }
+        #status { margin-top: 15px; padding: 10px; border-radius: 4px; display: none; font-weight: bold; }
+        .error { background: #fee2e2; color: #991b1b; }
+        .success { background: #dcfce7; color: #166534; }
+    </style>
+</head>
+<body>
+
+    <h1>🚀 Paste JSON (Port 4000)</h1>
+    <p>Paste your array of objects below. Make sure it ends with <code>}]</code> (no dots).</p>
+
+    <textarea id="json-input">[
+  {
+    "title": "Dhurandhar: అలా ఏడ్చిన వారంతా ఇప్పుడు మౌనంగా ఉన్నారు",
+    "summary": "Sample summary text...",
+    "text": "Sample full text...",
+    "url": "https://www.eenadu.net/example-news-article",
+    "imageUrl": "",
+    "source": "Manual"
+  }
+]</textarea>
+
+    <button onclick="submitData()">Submit to Server</button>
+
+    <div id="status"></div>
+
+    <script>
+        // ✅ URL set to 4000 as requested
+        const API_URL = "http://localhost:4000/api/add-rss-to-queue";
+
+        async function submitData() {
+            const statusEl = document.getElementById('status');
+            const rawJson = document.getElementById('json-input').value.trim(); // Trim removes accidental spaces/dots
+
+            statusEl.style.display = 'block';
+            statusEl.textContent = 'Sending...';
+            statusEl.className = '';
+
+            try {
+                // 1. Validate JSON Syntax
+                let payload;
+                try {
+                    payload = JSON.parse(rawJson);
+                } catch (e) {
+                    throw new Error("Invalid JSON Syntax. Remove trailing commas or dots.");
+                }
+
+                // 2. Send Request
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                // 3. Handle Network Errors (404, 500, etc)
+                if (!response.ok) {
+                    const errText = await response.text();
+                    throw new Error(`Server Error (${response.status}): ${errText}`);
+                }
+
+                const result = await response.json();
+                statusEl.className = 'success';
+                statusEl.textContent = `✅ Success! Added: ${result.queuedCount}`;
+
+            } catch (err) {
+                console.error(err);
+                statusEl.className = 'error';
+                
+                if (err.message.includes("Failed to fetch")) {
+                    statusEl.textContent = "❌ Network Error: Could not connect to localhost:4000. Is the server running?";
+                } else {
+                    statusEl.textContent = "❌ " + err.message;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
