@@ -29,22 +29,24 @@ const AWS_REGION = process.env.AWS_REGION;
 // --- TARGETS ---
 // 1. Twitter Users to Auto-Fetch
 const TARGET_HANDLES = [
-//   "IndianTechGuide",
-//   "bigtvtelugu",
-//   "TeluguScribe",
+  "IndianTechGuide",
+  // "bigtvtelugu",
+  "TeluguScribe",
   // "mufaddal_vohra",
 ];
 
-// --- RSS SOURCES ---
+// 2. RSS Feeds to Auto-Fetch
 const RSS_FEEDS = [
   { name: "NTV Telugu", url: "https://ntvtelugu.com/feed" },
-  { name: "Google News", url: "https://news.google.com/rss?hl=te&gl=IN&ceid=IN:te" },
-  { name: "ABP Telugu", url: "https://telugu.abplive.com/news/feed" },
   { name: "TV9 Telugu", url: "https://tv9telugu.com/feed" },
   { name: "V6 Telugu", url: "https://www.v6velugu.com/feed/" },
   { name: "10TV Telugu", url: "https://10tv.in/latest/feed" },
   { name: "Gulte", url: "https://telugu.gulte.com/feed" },
   { name: "Namasthe Telangana", url: "https://www.ntnews.com/feed" },
+  { name: "ABP Telugu", url: "https://telugu.abplive.com/news/feed" },
+  { name: "Google News", url: "https://news.google.com/rss?hl=te&gl=IN&ceid=IN:te" },
+  { name: "NDTV India", url: "https://feeds.feedburner.com/ndtvnews-india-news" },
+  { name: "NDTV Sports", url: "https://feeds.feedburner.com/ndtvsports-latest" },
 ];
 
 const s3Client = new S3Client({
@@ -113,6 +115,10 @@ const postSchema = new mongoose.Schema({
     summary: String,
     text: String,
     url: { type: String, unique: true, sparse: true },
+    
+    // ✅ NEW FIELD: Stores English slug for image searching
+    imageSearchSlug: { type: String, default: "" }, 
+    
     imageUrl: String,
     videoUrl: String,
     media: [{
@@ -148,12 +154,47 @@ const model = genAI.getGenerativeModel({
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const generatePostId = () => Math.floor(100000000 + Math.random() * 900000000);
 
-// Get Handle
+// Helper: Normalize URL (Removes tracking params & trailing slashes)
+function normalizeUrl(url) {
+  if (!url) return "";
+  try {
+    const urlObj = new URL(url);
+    urlObj.search = ""; 
+    let cleanUrl = urlObj.toString();
+    if (cleanUrl.endsWith("/")) cleanUrl = cleanUrl.slice(0, -1);
+    return cleanUrl;
+  } catch (e) { return url; }
+}
+
+// Helper: Get Handle from URL
 const getHandleFromUrl = (url) => {
   if (!url) return null;
   const match = url.match(/(?:twitter\.com|x\.com)\/([^\/]+)/);
   return match ? match[1] : null;
 };
+
+// ✅ NEW HELPER: Extract English Slug from URL
+function extractSlugFromUrl(url) {
+    if (!url) return "";
+    try {
+        const urlObj = new URL(url);
+        const pathSegments = urlObj.pathname.split('/').filter(Boolean);
+        
+        // Get the last segment
+        let slug = pathSegments[pathSegments.length - 1];
+        
+        // If the last segment is just numbers, try the one before it
+        if (slug && /^\d+$/.test(slug) && pathSegments.length > 1) {
+            slug = pathSegments[pathSegments.length - 2];
+        }
+
+        if (!slug) return "";
+        // Clean it: remove .html, replace underscores with hyphens
+        return slug.replace(/\.html?$/i, "").replace(/_/g, "-").toLowerCase();
+    } catch (e) {
+        return "";
+    }
+}
 
 async function getOrCreateTags(tagNames) {
   if (!tagNames || !Array.isArray(tagNames)) return [];
@@ -223,7 +264,7 @@ async function fetchAndQueueTweetsForHandle(userName) {
     }
     const data = await response.json();
     let tweets = data?.tweets ?? data?.data?.tweets ?? [];
-    tweets = tweets.slice(0, 5); // Limit to top 5
+    tweets = tweets.slice(0, 5); 
 
     if (tweets.length === 0) return 0;
 
@@ -259,84 +300,97 @@ async function fetchAndQueueTweetsForHandle(userName) {
   }
 }
 
-// ✅ 2. RSS FETCH & QUEUE (With Deduplication)
+// ✅ 2. RSS FETCH & QUEUE (With Deduplication & Locking)
+let isRSSFetching = false;
+
 async function fetchAndQueueRSS() {
+    if (isRSSFetching) {
+        console.log("⚠️ RSS Fetch already in progress. Skipping.");
+        return 0;
+    }
+    isRSSFetching = true; // Lock
+    
     console.log("📡 RSS: Starting Fetch Cycle...");
     let totalQueued = 0;
 
-    // Get Recent Data for Dedupe
-    const recentPosts = await Post.find({
-        publishedAt: { $gte: new Date(Date.now() - 48 * 60 * 60 * 1000) }
-    }).select('title url source');
-    const recentQueue = await Queue.find().select('text url');
+    try {
+        // Get Recent Data for Dedupe
+        const recentPosts = await Post.find({
+            publishedAt: { $gte: new Date(Date.now() - 72 * 60 * 60 * 1000) }
+        }).select('title url source');
+        const recentQueue = await Queue.find().select('text url');
 
-    const existingTitles = [
-        ...recentPosts.map(p => p.title),
-        ...recentQueue.map(q => q.text.split('\n')[0].replace("Title: ", ""))
-    ].filter(Boolean);
+        const existingTitles = [
+            ...recentPosts.map(p => p.title),
+            ...recentQueue.map(q => q.text.split('\n')[0].replace("Title: ", ""))
+        ].filter(Boolean);
 
-    const existingUrls = new Set([
-        ...recentPosts.map(p => p.url),
-        ...recentQueue.map(q => q.url)
-    ]);
+        const existingUrls = new Set([
+            ...recentPosts.map(p => normalizeUrl(p.url)),
+            ...recentQueue.map(q => normalizeUrl(q.url))
+        ]);
 
-    for (const feedSource of RSS_FEEDS) {
-        try {
-            console.log(`   Scanning: ${feedSource.name}...`);
-            const feed = await rssParser.parseURL(feedSource.url);
-            const items = feed.items.slice(0, 5); 
+        for (const feedSource of RSS_FEEDS) {
+            try {
+                console.log(`   Scanning: ${feedSource.name}...`);
+                const feed = await rssParser.parseURL(feedSource.url);
+                const items = feed.items.slice(0, 5); 
 
-            for (const item of items) {
-                if (existingUrls.has(item.link)) continue;
+                for (const item of items) {
+                    const cleanLink = normalizeUrl(item.link);
+                    if (existingUrls.has(cleanLink)) continue;
 
-                let isDuplicate = false;
-                if (existingTitles.length > 0) {
-                    const matches = stringSimilarity.findBestMatch(item.title, existingTitles);
-                    if (matches.bestMatch.rating > 0.6) {
-                        console.log(`   Skipping Duplicate: ${item.title}`);
-                        isDuplicate = true;
+                    let isDuplicate = false;
+                    if (existingTitles.length > 0) {
+                        const matches = stringSimilarity.findBestMatch(item.title, existingTitles);
+                        if (matches.bestMatch.rating > 0.65) {
+                            console.log(`   Skipping Duplicate: ${item.title}`);
+                            isDuplicate = true;
+                        }
+                    }
+
+                    if (!isDuplicate) {
+                        const extractedImage = extractRSSImage(item);
+                        const mediaObj = extractedImage ? [{
+                            type: 'photo',
+                            media_url_https: extractedImage,
+                            url: extractedImage
+                        }] : [];
+
+                        const newItem = new Queue({
+                            id: new mongoose.Types.ObjectId().toString(),
+                            text: `Title: ${item.title}\nSummary: ${item.contentSnippet || ""}`,
+                            url: item.link,
+                            imageUrl: extractedImage, 
+                            media: mediaObj,
+                            extendedEntities: { media: mediaObj }, 
+                            source: feedSource.name,
+                            user: { name: feedSource.name, screen_name: "RSS_Feed" },
+                            postType: "normal_post",
+                            promptType: "NEWS_ARTICLE",
+                            queuedAt: new Date()
+                        });
+
+                        await newItem.save();
+                        existingTitles.push(item.title);
+                        existingUrls.add(cleanLink);
+                        totalQueued++;
                     }
                 }
-
-                if (!isDuplicate) {
-                    const extractedImage = extractRSSImage(item);
-                    
-                    // Create Media Object for Worker
-                    const mediaObj = extractedImage ? [{
-                        type: 'photo',
-                        media_url_https: extractedImage,
-                        url: extractedImage
-                    }] : [];
-
-                    const newItem = new Queue({
-                        id: new mongoose.Types.ObjectId().toString(),
-                        text: `Title: ${item.title}\nSummary: ${item.contentSnippet || ""}`,
-                        url: item.link,
-                        imageUrl: extractedImage, 
-                        media: mediaObj,
-                        extendedEntities: { media: mediaObj }, 
-                        source: feedSource.name,
-                        user: { name: feedSource.name, screen_name: "RSS_Feed" },
-                        postType: "normal_post",
-                        promptType: "NEWS_ARTICLE",
-                        queuedAt: new Date()
-                    });
-
-                    await newItem.save();
-                    existingTitles.push(item.title);
-                    existingUrls.add(item.link);
-                    totalQueued++;
-                }
+            } catch (err) {
+                console.error(`   ❌ Failed to fetch ${feedSource.name}: ${err.message}`);
             }
-        } catch (err) {
-            console.error(`   ❌ Failed to fetch ${feedSource.name}: ${err.message}`);
         }
+    } catch (e) {
+        console.error("RSS Error:", e);
+    } finally {
+        isRSSFetching = false; // Unlock
     }
     console.log(`📡 RSS: Cycle Complete. Queued ${totalQueued} new items.`);
     return totalQueued;
 }
 
-// ✅ GEMINI PROMPT
+// ✅ GEMINI PROMPT (Updated to ask for Slug)
 async function formatTweetWithGemini(text, tweetUrl, sourceName) {
   const scrapedContext = tweetUrl ? await scrapeUrlContent(tweetUrl) : null;
 
@@ -351,12 +405,14 @@ async function formatTweetWithGemini(text, tweetUrl, sourceName) {
     1. Language: Native Telugu.
     2. Tone: Formal, Factual.
     3. Categorization: Assign ONE: [Politics, Cinema, Sports, Crime, Business, Technology, General].
+    4. Slug: Generate a short English slug (3-5 words) for the article topic (e.g., "cm-jagan-tirumala-visit").
 
     OUTPUT JSON FORMAT (Strict):
     {
       "title": "Telugu title catchy (Max 8 words)",
       "summary": "Detailed summary explaining the 'What', 'Where', and 'Why'. (60-80 words)",
       "category": "English Category Name"
+        "slug_en": "english-slug-for-url" 
     }
   `;
 
@@ -372,7 +428,7 @@ async function formatTweetWithGemini(text, tweetUrl, sourceName) {
 
 // --- ROUTES ---
 
-app.get("/", (req, res) => res.send("<h1>✅ Server Running: RSS + Twitter + Category</h1>"));
+app.get("/", (req, res) => res.send("<h1>✅ Server Running: RSS + Twitter + Slug Logic</h1>"));
 
 // 1. Trigger RSS Manually
 app.get("/api/trigger-rss-fetch", async (req, res) => {
@@ -389,60 +445,13 @@ app.get("/api/trigger-auto-fetch", async (req, res) => {
   res.json({ success: true, queued_total: total });
 });
 
-// 3. Fetch Specific User Tweets (Manual)
-app.get("/api/fetch-user-last-tweets", async (req, res) => {
-  const { userName, limit, type } = req.query;
-  const postType = type || "normal_post";
-
-  if (!userName) return res.status(400).json({ error: "username required" });
-
-  try {
-    const response = await fetch(
-      `https://api.twitterapi.io/twitter/user/last_tweets?userName=${userName}`,
-      {
-        headers: { "X-API-Key": TWITTER_API_IO_KEY },
-      }
-    );
-
-    if (!response.ok) return res.status(response.status).json({ error: await response.text() });
-
-    const data = await response.json();
-    let tweets = data?.tweets ?? data?.data?.tweets ?? [];
-    if (limit) tweets = tweets.slice(0, parseInt(limit));
-
-    const postedIds = await Post.find({ tweetId: { $in: tweets.map((t) => t.id) } }).distinct("tweetId");
-    const queuedIds = await Queue.find({ id: { $in: tweets.map((t) => t.id) } }).distinct("id");
-    const ignoredIds = new Set([...postedIds, ...queuedIds]);
-    const newTweets = tweets.filter((t) => !ignoredIds.has(t.id));
-
-    if (newTweets.length === 0) return res.json({ message: "No new tweets." });
-
-    const queueDocs = newTweets.map((t) => ({
-      id: t.id,
-      text: t.text,
-      url: t.url,
-      media: t.media || [],
-      extendedEntities: t.extendedEntities || {},
-      user: t.user || { screen_name: userName, name: userName },
-      postType: postType,
-      useAuthorContext: false,
-    }));
-
-    await Queue.insertMany(queueDocs);
-    res.json({ success: true, queued_count: newTweets.length });
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
-});
-
-// 4. Manual Post Queue (Array of Objects)
+// 3. Manual Post Queue
 app.post("/api/add-rss-to-queue", async (req, res) => {
     try {
         const postsToQueue = Array.isArray(req.body) ? req.body : req.body.items;
         if (!Array.isArray(postsToQueue)) return res.status(400).json({ error: "Array required" });
 
         const newQueueDocs = postsToQueue.map(item => {
-             // Mimic Twitter Media Structure for Manual Uploads
              const mediaObj = item.imageUrl ? [{
                 type: 'photo',
                 media_url_https: item.imageUrl, 
@@ -455,7 +464,7 @@ app.post("/api/add-rss-to-queue", async (req, res) => {
                 url: item.url,
                 imageUrl: item.imageUrl,
                 media: mediaObj,
-                extendedEntities: { media: mediaObj }, // Crucial for Worker
+                extendedEntities: { media: mediaObj }, 
                 source: item.source || "Manual",
                 promptType: "DETAILED",
                 user: { name: "Manual", screen_name: "manual" },
@@ -484,12 +493,11 @@ cron.schedule("*/1 * * * *", async () => {
             if (geminiData) {
                 // Image Handling
                 let imageUrl = item.imageUrl;
-                // If not in root, check the media array we created
                 if(!imageUrl && item.extendedEntities?.media?.[0]) {
                     imageUrl = item.extendedEntities.media[0].media_url_https;
                 }
 
-                // Determine Post Type (Check for Video)
+                // Video Logic
                 let finalPostType = "normal_post";
                 let tweetVideo = null;
                 const mediaList = item.extendedEntities?.media || item.media || [];
@@ -501,9 +509,17 @@ cron.schedule("*/1 * * * *", async () => {
                       .sort((a, b) => b.bitrate - a.bitrate)[0];
                     if (bestVideo) {
                         tweetVideo = bestVideo.url;
-                        finalPostType = "normal_video"; // Auto-promote to video post
+                        finalPostType = "normal_video"; 
                     }
                 }
+
+                // ✅ NEW LOGIC: English Search Slug
+                let finalSearchSlug = geminiData.slug_en;
+                if (!finalSearchSlug || finalSearchSlug.length < 3) {
+                    // Fallback to URL extraction
+                    finalSearchSlug = extractSlugFromUrl(item.url);
+                }
+                if (!finalSearchSlug) finalSearchSlug = "latest-telugu-news";
 
                 const newPost = new Post({
                     postId: generatePostId(),
@@ -511,6 +527,10 @@ cron.schedule("*/1 * * * *", async () => {
                     summary: geminiData.summary,
                     text: geminiData.summary,
                     url: item.url,
+                    
+                    // ✅ Save English Slug
+                    imageSearchSlug: finalSearchSlug, 
+                    
                     source: item.source || "Manual",
                     sourceName: item.user?.name || "Manual",
                     sourceType: item.source === "Manual" ? "manual" : "rss",
@@ -541,11 +561,11 @@ cron.schedule("*/1 * * * *", async () => {
 // --- SCHEDULERS ---
 
 // 1. Fetch RSS every 30 mins
-cron.schedule("*/30 * * * *", async () => {
+cron.schedule("*/10 * * * *", async () => {
     await fetchAndQueueRSS();
 });
 
-// 2. Fetch Twitter every 30 mins (Offset by 15 mins if needed, currently same time)
+// 2. Fetch Twitter every 30 mins
 cron.schedule("*/30 * * * *", async () => {
     for (const handle of TARGET_HANDLES) {
         await fetchAndQueueTweetsForHandle(handle);
